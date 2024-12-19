@@ -5,6 +5,8 @@ import Home from './Home';
 import Login from './Login';
 import Registration from './Registration';
 import Character from './Character';
+import Profile from './Profile';
+import EditProfile from './EditProfile';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/character" element={<Character />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/editprofile" element={<EditProfile />} />
       </Routes>
     </BrowserRouter>
   )
