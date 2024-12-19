@@ -17,6 +17,14 @@ app.get("/login", (req, res) => {
     res.json({message: "Login Page"});
 });
 
+app.get("/character", (req, res) => {
+    res.json({message: "Character Page"});
+})
+
+app.get("/registration", (req, res) => {
+    res.json({message: "Registration Page"});
+})
+
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}!`);
 });
