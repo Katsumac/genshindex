@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 
+import EditProfileForm from "./components/EditProfileForm";
+import Typography from '@mui/material/Typography';
+
 export default function EditProfile() {
         const [message, setMessage] = useState("");
     
@@ -13,7 +16,8 @@ export default function EditProfile() {
     
         return (
             <div>
-                <h1>Edit Profile</h1>
+                <Typography variant="h2" gutterBottom> Edit Profile </Typography>
+                <EditProfileForm />
                 {/* <h1>{ message }</h1> */}
             </div>
         )
