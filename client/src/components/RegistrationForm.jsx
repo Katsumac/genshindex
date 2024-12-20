@@ -11,7 +11,8 @@ export default function RegistrationForm() {
     const [inputData, setInputData] = useState({
         registrationEmail: "",
         registrationPassword: "",
-        confirmRegistrationPassword: ""
+        confirmRegistrationPassword: "",
+        registrationUsername: ""
     });
 
     // Handle input changes for both email and password
@@ -53,9 +54,18 @@ export default function RegistrationForm() {
                         name="confirmRegistrationPassword"
                         label="Confirm Password"
                         variant="standard"
-                        sx={{width: 300, pb: 5}}
+                        sx={{width: 300, pb: 2}}
                         onChange={handleInputChange} />
                 </div>
+                <div id="registerUsernameInput">
+                    <TextField
+                        id="registerUsername"
+                        name="registerUsername"
+                        label="Username"
+                        variant="standard"
+                        sx={{width: 300, pb: 5}}
+                        onChange={handleInputChange} />
+                </div>                
                 <div id="registerButton">
                     <Button variant="contained" align="center" sx={{mb: 2}}>Register</Button>
                 </div>
