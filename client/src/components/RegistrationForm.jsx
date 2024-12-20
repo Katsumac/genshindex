@@ -7,10 +7,11 @@ import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 import '../style/Form.css'
 
-export default function LoginForm() {
+export default function RegistrationForm() {
     const [inputData, setInputData] = useState({
-        loginEmail: "",
-        loginPassword: ""
+        registrationEmail: "",
+        registrationPassword: "",
+        confirmRegistrationPassword: ""
     });
 
     // Handle input changes for both email and password
@@ -27,30 +28,39 @@ export default function LoginForm() {
     return (
         <div>
             <Box component="section" className="box" sx={{ p: 4, mt: 4, width: 300, border: 1, borderColor: "grey.500" }}>
-                <Typography variant="h5" gutterBottom>Log In</Typography>
-                <div id="loginEmailInput">
+                <Typography variant="h5" gutterBottom>Registration</Typography>
+                <div id="emailInput">
                     <TextField
-                        id="loginEmail"
-                        name="loginEmail"
+                        id="registrationEmail"
+                        name="registrationEmail"
                         label="Email"
                         variant="standard"
                         sx={{width: 300, pb: 2}}
                         onChange={handleInputChange} />
                 </div>
-                <div id="loginPasswordInput">
+                <div id="passwordInput">
                     <TextField
-                        id="loginPassword"
-                        name="loginPassword"
+                        id="registrationPassword"
+                        name="registrationPassword"
                         label="Password"
+                        variant="standard"
+                        sx={{width: 300, pb: 2}}
+                        onChange={handleInputChange} />
+                </div>
+                <div id="confirmRegistrationPasswordInput">
+                    <TextField
+                        id="confirmRegistrationPassword"
+                        name="confirmRegistrationPassword"
+                        label="Confirm Password"
                         variant="standard"
                         sx={{width: 300, pb: 5}}
                         onChange={handleInputChange} />
                 </div>
-                <div id="loginButton">
-                    <Button variant="contained" align="center" sx={{mb: 2}}>Log In</Button>
+                <div id="registerButton">
+                    <Button variant="contained" align="center" sx={{mb: 2}}>Register</Button>
                 </div>
-                <div id="registrationLink">
-                    <Typography variant="body1" gutterBottom>Don't have an account? <Link href="./registration">Click here!</Link></Typography>
+                <div id="loginLink">
+                    <Typography variant="body1" gutterBottom>Looking for the login page? <Link href="./login">Click here!</Link></Typography>
                 </div>
             </Box>
         </div>
