@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import LoginForm from "./components/LoginForm";
 import Typography from '@mui/material/Typography';
+import Stack from "@mui/material/Stack";
 import "./style/Login.css"
 
 export default function Login() {
@@ -16,7 +17,7 @@ export default function Login() {
 
     return (
         <div>
-            <Typography variant="h2" gutterBottom> Welcome to GenshinDex </Typography>
+            <Typography variant="h2" gutterBottom> GenshinDex </Typography>
             <img src={"./src/img/paimonSmile.png"} />
             <LoginForm />
             {/* <h1>{ message }</h1> */}
