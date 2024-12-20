@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 
+import RegistrationForm from "./components/RegistrationForm.jsx";
+import Typography from '@mui/material/Typography';
+
 export default function Registration() {
         const [message, setMessage] = useState("");
     
@@ -13,7 +16,8 @@ export default function Registration() {
     
         return (
             <div>
-                <h1>Registration Page</h1>
+                <Typography variant="h2" gutterBottom> GenshinDex </Typography>
+                <RegistrationForm />
                 {/* <h1>{ message }</h1> */}
             </div>
         )
