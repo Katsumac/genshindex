@@ -1,9 +1,10 @@
 import { useState } from 'react';
 
-import Box from '@mui/material/Box';
+import FormButton from './FormButton';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 import '../style/Form.css'
 
@@ -19,60 +20,62 @@ export default function RegistrationForm() {
     const handleInputChange = (e) => {
         const fieldName = e.target.name;
         const value = e.target.value;
-        
+
         setInputData(currentData => {
             currentData[fieldName] = value;
-            return {...currentData};
+            return { ...currentData };
         })
     }
 
     return (
         <div>
-            <Box component="section" className="box" sx={{ p: 4, mt: 4, width: 300, border: 1, borderColor: "grey.500" }}>
-                <Typography variant="h5" gutterBottom>Registration</Typography>
-                <div id="emailInput">
-                    <TextField
-                        id="registrationEmail"
-                        name="registrationEmail"
-                        label="Email"
-                        variant="standard"
-                        sx={{width: 300, pb: 2}}
-                        onChange={handleInputChange} />
-                </div>
-                <div id="passwordInput">
-                    <TextField
-                        id="registrationPassword"
-                        name="registrationPassword"
-                        label="Password"
-                        variant="standard"
-                        sx={{width: 300, pb: 2}}
-                        onChange={handleInputChange} />
-                </div>
-                <div id="confirmRegistrationPasswordInput">
-                    <TextField
-                        id="confirmRegistrationPassword"
-                        name="confirmRegistrationPassword"
-                        label="Confirm Password"
-                        variant="standard"
-                        sx={{width: 300, pb: 2}}
-                        onChange={handleInputChange} />
-                </div>
-                <div id="registerUsernameInput">
-                    <TextField
-                        id="registerUsername"
-                        name="registerUsername"
-                        label="Username"
-                        variant="standard"
-                        sx={{width: 300, pb: 5}}
-                        onChange={handleInputChange} />
-                </div>                
+            <Card sx={{ maxWidth: 350, p: 4, my: 4 }} className="card">
+                <CardContent>
+                    <Typography variant="h5" gutterBottom>Registration</Typography>
+                    <div id="emailInput">
+                        <TextField
+                            id="registrationEmail"
+                            name="registrationEmail"
+                            label="Email"
+                            variant="standard"
+                            sx={{ minWidth: 300, pb: 2 }}
+                            onChange={handleInputChange} />
+                    </div>
+                    <div id="passwordInput">
+                        <TextField
+                            id="registrationPassword"
+                            name="registrationPassword"
+                            label="Password"
+                            variant="standard"
+                            sx={{ minWidth: 300, pb: 2 }}
+                            onChange={handleInputChange} />
+                    </div>
+                    <div id="confirmRegistrationPasswordInput">
+                        <TextField
+                            id="confirmRegistrationPassword"
+                            name="confirmRegistrationPassword"
+                            label="Confirm Password"
+                            variant="standard"
+                            sx={{ minWidth: 300, pb: 2 }}
+                            onChange={handleInputChange} />
+                    </div>
+                    <div id="registerUsernameInput">
+                        <TextField
+                            id="registerUsername"
+                            name="registerUsername"
+                            label="Username"
+                            variant="standard"
+                            sx={{ minWidth: 300, pb: 5 }}
+                            onChange={handleInputChange} />
+                    </div>
+                </CardContent>
                 <div id="registerButton">
-                    <Button variant="contained" align="center" sx={{mb: 2}}>Register</Button>
+                    <FormButton text="Register" />
                 </div>
                 <div id="loginLink">
                     <Typography variant="body1" gutterBottom>Looking for the login page? <Link href="./login">Click here!</Link></Typography>
                 </div>
-            </Box>
+            </Card>
         </div>
     )
 }
