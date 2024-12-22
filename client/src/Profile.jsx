@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 
+import ProfileDisplay from "./components/ProfileDisplay";
+import Typography from "@mui/material/Typography";
+
 export default function Profile() {
         const [message, setMessage] = useState("");
     
@@ -8,12 +11,13 @@ export default function Profile() {
             //     .then(response => response.json())
             //     .then(data => setMessage(data.message))
             //     .catch(e => `Error: ${e}`);
-            document.title = "GenshinDex - Profile";
+            document.title = "GenshinDex - Your Profile";
         }, []);
     
         return (
             <div>
-                <h1>Profile Page</h1>
+                <Typography variant="h2" gutterBottom>Your Profile</Typography>
+                <ProfileDisplay />
                 {/* <h1>{ message }</h1> */}
             </div>
         )
