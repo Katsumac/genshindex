@@ -1,0 +1,11 @@
+img {
+    border-radius: 50%;
+    width: 45px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.menuItem {
+    color: black;
+    text-decoration: none;
+}
