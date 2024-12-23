@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import Navbar from './components/navbar';
 import ProfileDisplay from "./components/ProfileDisplay";
 import Typography from "@mui/material/Typography";
 
@@ -16,6 +17,7 @@ export default function Profile() {
     
         return (
             <div>
+                <Navbar />
                 <Typography variant="h2" gutterBottom>Your Profile</Typography>
                 <ProfileDisplay />
                 {/* <h1>{ message }</h1> */}

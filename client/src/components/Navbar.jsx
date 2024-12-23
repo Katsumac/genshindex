@@ -14,8 +14,9 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+import "../style/Navbar.css"
+
+const pages = ["Home", "Profile"];
 
 export default function Navbar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -38,15 +39,20 @@ export default function Navbar() {
 
   return (
     
-    <AppBar position="static" sx={{mr: 20}}>
+    <AppBar position="static" sx={{backgroundColor: "#224488", mb: 5}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+
+          {/* For larger screens */}
+          {/* Logo */}
+          <a href="./"><img src={"./src/img/paimonSmile.png"} /></a>
+
+          {/* Title */}
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="./"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -57,10 +63,12 @@ export default function Navbar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            GenshinDex
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+
+            {/* Navbar Accordion Button */}
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -87,19 +95,25 @@ export default function Navbar() {
               onClose={handleCloseNavMenu}
               sx={{ display: { xs: 'block', md: 'none' } }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+
+              {/* Menu Items */}
+                <MenuItem key="Home" onClick={handleCloseNavMenu}>
+                  <a href="./" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Home</Typography></a>
                 </MenuItem>
-              ))}
+
+                <MenuItem key="Profile" onClick={handleCloseNavMenu}>
+                  <a href="./profile" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Profile</Typography></a>
+                </MenuItem>
+
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+
+          {/* For smaller screens */}
           <Typography
             variant="h5"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="./"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -111,48 +125,33 @@ export default function Navbar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            GenshinDex
           </Typography>
+
+          {/* Menu Items */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
+              <a href="./">
+                <Button
+                key="Home"
+                src="./"
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  Home
+                </Button>
+              </a>
+              <a href="./profile">
+                <Button
+                key="Profile"
+                src="./profile"
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                Profile
               </Button>
-            ))}
+            </a>              
           </Box>
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
+          <a href="./login"><Button variant="contained">Log Out</Button></a>
         </Toolbar>
       </Container>
     </AppBar>

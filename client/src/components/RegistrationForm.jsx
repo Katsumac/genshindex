@@ -29,7 +29,7 @@ export default function RegistrationForm() {
 
     return (
         <div>
-            <Card sx={{ maxWidth: 350, p: 4, my: 4 }} className="card">
+            <Card sx={{ maxWidth: 350, p: 4, mt: 4, mb: 12 }} className="card">
                 <CardContent>
                     <Typography variant="h5" gutterBottom>Registration</Typography>
                     <div id="emailInput">

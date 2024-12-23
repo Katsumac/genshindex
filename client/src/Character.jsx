@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import Navbar from './components/navbar';
+
 export default function Character() {
         const [message, setMessage] = useState("");
     
@@ -13,6 +15,7 @@ export default function Character() {
     
         return (
             <div>
+                <Navbar />
                 <h1>Character Page</h1>
                 {/* <h1>{ message }</h1> */}
             </div>
