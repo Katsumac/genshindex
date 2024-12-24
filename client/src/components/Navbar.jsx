@@ -45,7 +45,7 @@ export default function Navbar() {
 
           {/* For larger screens */}
           {/* Logo */}
-          <a href="./"><img src={"./src/img/paimonSmile.png"} /></a>
+          <a href="./"><img src={"./src/img/paimonSmile.png"} id="paimonNavImg" /></a>
 
           {/* Title */}
           <Typography
