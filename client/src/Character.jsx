@@ -50,19 +50,22 @@ export default function Character() {
                 <Typography variant ="body2" component="h2">Birthday: { characterData.birthday }</Typography>
                 <Typography variant ="body2" component="h2">Description: { characterData.description }</Typography>
 
-                <Typography variant ="h4" component="h2" sx={{mt: 3}}>Talents</Typography>
+                <Typography variant ="h4" component="h2" sx={{mt: 3}}>Skills</Typography>
 
-                <Typography variant ="body2" component="h2" style={{whiteSpace: "pre-wrap"}}>Normal Attack: { characterData && characterData.skillTalents[0].name } - { characterData && characterData.skillTalents[0].description }</Typography>
-                <Typography variant ="body2" component="h2" style={{whiteSpace: "pre-wrap"}}>Elemental Skill: { characterData && characterData.skillTalents[1].name } - { characterData && characterData.skillTalents[1].description }</Typography>
-                <Typography variant ="body2" component="h2" style={{whiteSpace: "pre-wrap"}}>Elemental Burst: { characterData && characterData.skillTalents[2].name } - { characterData && characterData.skillTalents[2].description }</Typography>
+                {characterData && characterData.skillTalents.map((skillTalent) =>
+                    <Typography variant ="body2" component="h2" style={{whiteSpace: "pre-wrap"}} key={skillTalent.unlock}>{skillTalent.unlock}: { skillTalent.name } - { skillTalent.description }</Typography>
+                )}
+
+                <Typography variant ="h4" component="h2" sx={{mt: 3}}>Passive Talents</Typography>
+
                 {characterData && characterData.passiveTalents.map((talent) =>
-                    <Typography variant ="body2" component="h2">Talent: { talent.name } - { talent.description }</Typography>
+                    <Typography variant ="body2" component="h2" key={talent.unlock}>{talent.unlock}: { talent.name } - { talent.description }</Typography>
                 )}
                     
                 <Typography variant ="h4" component="h2" sx={{mt: 3}}>Constellations</Typography>
 
                 {characterData && characterData.constellations.map((constellation) =>
-                    <Typography variant ="body2" component="h2">Constellation: { constellation.name } - { constellation.description }</Typography>
+                    <Typography variant ="body2" component="h2" key={constellation.unlock}>{constellation.unlock}: { constellation.name } - { constellation.description }</Typography>
                 )}
   
             </div>
