@@ -1,23 +1,13 @@
 import { useEffect, useState } from "react";
 
 import Navbar from './components/navbar';
+import CharacterDataTable from "./components/CharacterDataTable";
 import Typography from "@mui/material/Typography";
 import "./style/Character.css"
 
 export default function Character() {
         const [characterData, setCharacterData] = useState("");
         const [characterIcon, setCharacterIcon] = useState("");
-
-
-        const fetchCharacterData = () => {
-
-        }
-        // const fetchCharacterIcon = async() => {
-            // fetch("https://genshin.jmp.blue/characters/albedo/icon")
-            // .then(response => response.blob())
-            // .then(blob => setCharacterIcon(URL.createObjectURL(blob)))
-            // .catch(e => `Error: ${e}`);
-        // }
 
         useEffect(() => {
             fetch("https://genshin.jmp.blue/characters/albedo")
@@ -50,23 +40,14 @@ export default function Character() {
                 <Typography variant ="body2" component="h2">Birthday: { characterData.birthday }</Typography>
                 <Typography variant ="body2" component="h2">Description: { characterData.description }</Typography>
 
-                <Typography variant ="h4" component="h2" sx={{mt: 3}}>Skills</Typography>
+                <Typography variant ="h4" component="h2" sx={{mt: 3, mb: 1}}>Skills</Typography>
+                {characterData && <CharacterDataTable abilityData={characterData.skillTalents}/>}
 
-                {characterData && characterData.skillTalents.map((skillTalent) =>
-                    <Typography variant ="body2" component="h2" style={{whiteSpace: "pre-wrap"}} key={skillTalent.unlock}>{skillTalent.unlock}: { skillTalent.name } - { skillTalent.description }</Typography>
-                )}
-
-                <Typography variant ="h4" component="h2" sx={{mt: 3}}>Passive Talents</Typography>
-
-                {characterData && characterData.passiveTalents.map((talent) =>
-                    <Typography variant ="body2" component="h2" key={talent.unlock}>{talent.unlock}: { talent.name } - { talent.description }</Typography>
-                )}
+                <Typography variant ="h4" component="h2" sx={{mt: 3, mb: 1}}>Passive Talents</Typography>
+                {characterData && <CharacterDataTable abilityData={characterData.passiveTalents}/>}
                     
-                <Typography variant ="h4" component="h2" sx={{mt: 3}}>Constellations</Typography>
-
-                {characterData && characterData.constellations.map((constellation) =>
-                    <Typography variant ="body2" component="h2" key={constellation.unlock}>{constellation.unlock}: { constellation.name } - { constellation.description }</Typography>
-                )}
+                <Typography variant ="h4" component="h2" sx={{mt: 3, mb: 1}}>Constellations</Typography>
+                {characterData && <CharacterDataTable abilityData={characterData.constellations}/>}
   
             </div>
         )
