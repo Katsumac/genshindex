@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import Navbar from './components/navbar';
+import StarButton from "./components/StarButton";
 import BioTable from "./components/BioTable";
 import AbilityTable from "./components/AbilityTable";
 import Typography from "@mui/material/Typography";
@@ -44,6 +45,11 @@ export default function Character() {
 
                 <Typography variant="h3" component="h2" sx={{mb: 6}}>{ characterData.name }</Typography>
                 <img src={characterIcon} id="characterIcon" />
+    
+                <Typography variant ="h6" component="h2" sx={{mt: 3, mb: 1}} >Favourite 
+                </Typography>
+
+                <div id="starDiv"><StarButton /></div>
 
                 <Typography variant ="h4" component="h2" sx={{mt: 6, mb: 1}}>Bio</Typography>
                 
