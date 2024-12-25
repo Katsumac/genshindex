@@ -35,9 +35,9 @@ export default function Character() {
                 <Typography variant ="body2" component="h2">Nation: { characterData.nation }</Typography>
                 <Typography variant ="body2" component="h2">Affiliation: { characterData.affiliation }</Typography>
                 <Typography variant ="body2" component="h2">Rarity: { characterData.rarity }</Typography>
-                <Typography variant ="body2" component="h2">Release Date: { characterData.release }</Typography>
+                <Typography variant ="body2" component="h2">Release Date: { new Date(characterData.release).toLocaleString("default", {year: "numeric", month: "long", day: "numeric"}) }</Typography>
                 <Typography variant ="body2" component="h2">Constellation Name: { characterData.constellation }</Typography>
-                <Typography variant ="body2" component="h2">Birthday: { characterData.birthday }</Typography>
+                <Typography variant ="body2" component="h2">Birthday: { new Date(characterData.birthday).toLocaleString("default", {month: "long", day: "numeric"}) }</Typography>
                 <Typography variant ="body2" component="h2">Description: { characterData.description }</Typography>
 
                 <Typography variant ="h4" component="h2" sx={{mt: 3, mb: 1}}>Skills</Typography>

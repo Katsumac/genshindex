@@ -7,7 +7,9 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
+export default function CharacterDataTable({ abilityData }) {
+
+  const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: "#224488",
     color: theme.palette.common.white,
@@ -27,10 +29,9 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-export default function CharacterDataTable({ abilityData }) {
   return (
-    <TableContainer component={Paper} sx={{minWidth: 200, maxWidth: 900, mb: 8 }} style={{marginLeft: "auto", marginRight: "auto"}}>
-      <Table sx={{ minWidth: 200, maxWidth: 900 }} aria-label="customized table">
+    <TableContainer component={Paper} sx={{minWidth: 200, maxWidth: 1000, mb: 8 }} style={{marginLeft: "auto", marginRight: "auto"}}>
+      <Table sx={{ minWidth: 200, maxWidth: 1000 }} aria-label="customized table">
         <TableHead>
           <TableRow>
             <StyledTableCell>Name</StyledTableCell>
@@ -45,7 +46,7 @@ export default function CharacterDataTable({ abilityData }) {
                 {ability.name}
               </StyledTableCell>
               <StyledTableCell align="left" style={{whiteSpace:"pre-wrap"}}>{ability.unlock}</StyledTableCell>
-              <StyledTableCell align="left" style={{whiteSpace:"pre-wrap"}}>{ability.description}</StyledTableCell>
+              <StyledTableCell align="left" style={{whiteSpace:"pre-wrap"}}>{ability.description.replace(/\n/g, "\n\n").replace(/\n\n\n\n/g, "\n")}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
