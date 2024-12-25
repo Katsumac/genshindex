@@ -14,15 +14,16 @@ export default function Character() {
         useEffect(() => {
             fetch("https://genshin.jmp.blue/characters/albedo")
             .then(response => response.json())
-            .then(data => setCharacterData(data))
+            .then(data => {
+                setCharacterData(data);
+                document.title = `${data.name} | GenshinDex`;
+            })
             .catch(e => `Error: ${e}`);
 
-            fetch("https://genshin.jmp.blue/characters/albedo/icon")
+            fetch("https://genshin.jmp.blue/characters/albedo/icon-big")
             .then(response => response.blob())
             .then(blob => setCharacterIcon(URL.createObjectURL(blob)))
             .catch(e => `Error: ${e}`);
-
-            document.title = `${characterData.name} - GenshinDex`
         }, []);
 
         const bioData = [
