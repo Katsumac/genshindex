@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 
-import Navbar from './components/navbar';
 import StarButton from "./components/StarButton";
 import BioTable from "./components/BioTable";
 import AbilityTable from "./components/AbilityTable";
@@ -42,8 +41,6 @@ export default function Character() {
 
         return (
             <div>
-                <Navbar />
-
                 <Typography variant="h3" component="h2" sx={{mb: 6}}>{ characterData.name }</Typography>
                 <img src={characterIcon} id="characterIcon" />
     

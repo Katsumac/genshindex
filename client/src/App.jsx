@@ -2,6 +2,7 @@ import './style/App.css'
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import Navbar from './components/navbar';
 import Home from './Home';
 import Login from './Login';
 import Registration from './Registration';
@@ -11,6 +12,8 @@ import EditProfile from './EditProfile';
 
 function App() {
   return (
+    <>
+      <Navbar />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -21,6 +24,7 @@ function App() {
           <Route path="/editprofile" element={<EditProfile />} />
         </Routes>
       </BrowserRouter>
+    </>
   )
 }
 
