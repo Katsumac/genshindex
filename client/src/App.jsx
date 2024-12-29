@@ -6,9 +6,10 @@ import Navbar from './components/navbar';
 import Home from './Home';
 import Login from './Login';
 import Registration from './Registration';
-import Character from './Character';
+import CharacterInfo from './CharacterInfo';
 import Profile from './Profile';
 import EditProfile from './EditProfile';
+import Characters from './Characters';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/registration" element={<Registration />} />
-          <Route path="/character" element={<Character />} />
+          <Route path="/characters" element={<Characters />} />
+          <Route path="/characterInfo" element={<CharacterInfo />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/editprofile" element={<EditProfile />} />
         </Routes>

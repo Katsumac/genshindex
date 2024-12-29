@@ -4,9 +4,9 @@ import StarButton from "./components/StarButton";
 import BioTable from "./components/BioTable";
 import AbilityTable from "./components/AbilityTable";
 import Typography from "@mui/material/Typography";
-import "./style/Character.css"
+import "./style/CharacterInfo.css"
 
-export default function Character() {
+export default function CharacterInfo() {
         const [characterData, setCharacterData] = useState("");
         const [characterIcon, setCharacterIcon] = useState("");
 
