@@ -5,6 +5,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import RarityStars from './RarityStars';
+import "../style/Card.css"
+
 import colorSelector from '../js/colourSelector';
 
 export default function CharacterCard() {
@@ -13,12 +15,12 @@ export default function CharacterCard() {
     const [characterIcon, setCharacterIcon] = useState("");
 
     useEffect(() => {
-        fetch("https://genshin.jmp.blue/characters/eula")
+        fetch("https://genshin.jmp.blue/characters/albedo")
         .then(response => response.json())
         .then(data => setCharacterData(data))
         .catch(e => `Error: ${e}`);
 
-        fetch("https://genshin.jmp.blue/characters/eula/icon-big")
+        fetch("https://genshin.jmp.blue/characters/albedo/icon-big")
         .then(response => response.blob())
         .then(blob => setCharacterIcon(URL.createObjectURL(blob)))
         .catch(e => `Error: ${e}`);
@@ -29,6 +31,7 @@ export default function CharacterCard() {
 
         return (
         <Card sx={{ maxWidth: 345 }}>
+        <a href="./characterInfo" className="cardLink">
           <CardMedia
             component="img"
             alt={characterData.name}
@@ -40,17 +43,15 @@ export default function CharacterCard() {
             <Typography gutterBottom variant="h5" component="div">
               {characterData.name}
             </Typography>
-            <RarityStars rarity={Number(characterData.rarity)} />
-            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+            <RarityStars rarity={Number(characterData.rarity)} characterName={characterData.name} />
+            <Typography variant="body2" sx={{ color: colorSelector(characterData.vision) }}>
                 {characterData.vision}
             </Typography>
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                 {characterData.weapon}
             </Typography>
-            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                {characterData.description}
-            </Typography>
           </CardContent>
+          </a>
         </Card>
       );
     }
