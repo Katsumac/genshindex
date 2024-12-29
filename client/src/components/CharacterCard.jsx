@@ -6,6 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import colorSelector from '../js/colourSelector';
 
 export default function CharacterCard() {
 
@@ -13,18 +14,17 @@ export default function CharacterCard() {
     const [characterIcon, setCharacterIcon] = useState("");
 
     useEffect(() => {
-        fetch("https://genshin.jmp.blue/characters/albedo")
+        fetch("https://genshin.jmp.blue/characters/eula")
         .then(response => response.json())
-        .then(data => {
-            setCharacterData(data);
-            document.title = `${data.name} | GenshinDex`;
-        })
+        .then(data => setCharacterData(data))
         .catch(e => `Error: ${e}`);
 
-        fetch("https://genshin.jmp.blue/characters/albedo/icon-big")
+        fetch("https://genshin.jmp.blue/characters/eula/icon-big")
         .then(response => response.blob())
         .then(blob => setCharacterIcon(URL.createObjectURL(blob)))
         .catch(e => `Error: ${e}`);
+
+        document.title = "Characters | Genshindex";
     }, []);
 
 
@@ -33,8 +33,9 @@ export default function CharacterCard() {
           <CardMedia
             component="img"
             alt="green iguana"
-            height="140"
+            height="250"
             image={characterIcon}
+            sx={{bgcolor: colorSelector(characterData.vision)}}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
