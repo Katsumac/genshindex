@@ -1,0 +1,15 @@
+.cardLink {
+    text-decoration: none;
+    color: inherit;
+}
+
+.box:hover {
+    transform: scale(1.05);
+    transition: all 0.75s;
+    
+}
+
+.box:not(:hover) {
+    transform: scale(1);
+    transition: all 0.75s;
+}

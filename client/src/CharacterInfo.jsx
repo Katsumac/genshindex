@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-import Navbar from './components/navbar';
 import StarButton from "./components/StarButton";
 import BioTable from "./components/BioTable";
 import AbilityTable from "./components/AbilityTable";
 import Typography from "@mui/material/Typography";
-import "./style/Character.css"
+import "./style/CharacterInfo.css"
 
-export default function Character() {
+export default function CharacterInfo() {
         const [characterData, setCharacterData] = useState("");
         const [characterIcon, setCharacterIcon] = useState("");
+        const characterName = useParams().name;
 
         useEffect(() => {
-            fetch("https://genshin.jmp.blue/characters/albedo")
+            fetch(`https://genshin.jmp.blue/characters/${characterName}`)
             .then(response => response.json())
             .then(data => {
                 setCharacterData(data);
@@ -20,7 +21,7 @@ export default function Character() {
             })
             .catch(e => `Error: ${e}`);
 
-            fetch("https://genshin.jmp.blue/characters/albedo/icon-big")
+            fetch(`https://genshin.jmp.blue/characters/${characterName}/icon-big`)
             .then(response => response.blob())
             .then(blob => setCharacterIcon(URL.createObjectURL(blob)))
             .catch(e => `Error: ${e}`);
@@ -42,8 +43,6 @@ export default function Character() {
 
         return (
             <div>
-                <Navbar />
-
                 <Typography variant="h3" component="h2" sx={{mb: 6}}>{ characterData.name }</Typography>
                 <img src={characterIcon} id="characterIcon" />
     
