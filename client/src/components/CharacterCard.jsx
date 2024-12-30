@@ -29,8 +29,8 @@ export default function CharacterCard({characterName}) {
     }, []);
 
         return (
-        <Card sx={{ maxWidth: 250 }} >
-        <a href={`./characters/${characterName}`}  className="cardLink">
+        <Card sx={{ maxWidth: 250 }} className="box">
+        <a href={`./characters/${characterName}`} className="cardLink box">
           <CardMedia
             component="img"
             alt={characterData.name}
