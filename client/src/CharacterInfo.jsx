@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 import StarButton from "./components/StarButton";
 import BioTable from "./components/BioTable";
@@ -9,9 +10,10 @@ import "./style/CharacterInfo.css"
 export default function CharacterInfo() {
         const [characterData, setCharacterData] = useState("");
         const [characterIcon, setCharacterIcon] = useState("");
+        const characterName = useParams().name;
 
         useEffect(() => {
-            fetch("https://genshin.jmp.blue/characters/albedo")
+            fetch(`https://genshin.jmp.blue/characters/${characterName}`)
             .then(response => response.json())
             .then(data => {
                 setCharacterData(data);
@@ -19,7 +21,7 @@ export default function CharacterInfo() {
             })
             .catch(e => `Error: ${e}`);
 
-            fetch("https://genshin.jmp.blue/characters/albedo/icon-big")
+            fetch(`https://genshin.jmp.blue/characters/${characterName}/icon-big`)
             .then(response => response.blob())
             .then(blob => setCharacterIcon(URL.createObjectURL(blob)))
             .catch(e => `Error: ${e}`);

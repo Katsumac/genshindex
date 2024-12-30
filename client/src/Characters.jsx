@@ -12,7 +12,7 @@ export default function Characters() {
         .then(data => setCharacterList(data))
         .catch(e => `Error: ${e}`);
 
-        document.title = "Characters | Genshindex"
+        document.title = "Characters | Genshindex";
     }, [])
 
     return (

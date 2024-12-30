@@ -45,14 +45,14 @@ export default function Navbar() {
 
           {/* For larger screens */}
           {/* Logo */}
-          <a href="./"><img src={"./src/img/paimonSmile.png"} id="paimonNavImg" /></a>
+          <a href="/"><img src={"/src/img/paimonSmile.png"} id="paimonNavImg" /></a>
 
           {/* Title */}
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="./"
+            href="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -98,11 +98,11 @@ export default function Navbar() {
 
               {/* Menu Items */}
                 <MenuItem key="Home" onClick={handleCloseNavMenu}>
-                  <a href="./" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Home</Typography></a>
+                  <a href="/" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Home</Typography></a>
                 </MenuItem>
 
                 <MenuItem key="Profile" onClick={handleCloseNavMenu}>
-                  <a href="./profile" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Profile</Typography></a>
+                  <a href="/profile" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Profile</Typography></a>
                 </MenuItem>
 
             </Menu>
@@ -113,7 +113,7 @@ export default function Navbar() {
             variant="h5"
             noWrap
             component="a"
-            href="./"
+            href="/"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -130,20 +130,20 @@ export default function Navbar() {
 
           {/* Menu Items */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-              <a href="./">
+              <a href="/">
                 <Button
                 key="Home"
-                src="./"
+                src="/"
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
                 >
                   Home
                 </Button>
               </a>
-              <a href="./profile">
+              <a href="/profile">
                 <Button
                 key="Profile"
-                src="./profile"
+                src="/profile"
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
@@ -151,7 +151,7 @@ export default function Navbar() {
               </Button>
             </a>              
           </Box>
-          <a href="./login"><Button variant="contained">Log Out</Button></a>
+          <a href="/login"><Button variant="contained">Log Out</Button></a>
         </Toolbar>
       </Container>
     </AppBar>
