@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -30,7 +29,7 @@ export default function CharacterCard({characterName}) {
     }, []);
 
         return (
-        <Card sx={{ maxWidth: 345 }} >
+        <Card sx={{ maxWidth: 250 }} >
         <a href={`./characters/${characterName}`}  className="cardLink">
           <CardMedia
             component="img"
