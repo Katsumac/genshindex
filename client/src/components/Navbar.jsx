@@ -101,6 +101,10 @@ export default function Navbar() {
                   <a href="/" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Home</Typography></a>
                 </MenuItem>
 
+                <MenuItem key="Characters" onClick={handleCloseNavMenu}>
+                  <a href="/charactesr" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Characters</Typography></a>
+                </MenuItem>
+
                 <MenuItem key="Profile" onClick={handleCloseNavMenu}>
                   <a href="/profile" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Profile</Typography></a>
                 </MenuItem>
@@ -130,7 +134,7 @@ export default function Navbar() {
 
           {/* Menu Items */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-              <a href="/">
+              <a href="/" className="menuItem">
                 <Button
                 key="Home"
                 src="/"
@@ -140,7 +144,17 @@ export default function Navbar() {
                   Home
                 </Button>
               </a>
-              <a href="/profile">
+              <a href="/characters" className="menuItem">
+                <Button
+                key="Characters"
+                src="/characters"
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  Characters
+                </Button>
+              </a>
+              <a href="/profile" className="menuItem">
                 <Button
                 key="Profile"
                 src="/profile"
