@@ -9,18 +9,18 @@ import "../style/Card.css"
 
 import colorSelector from '../js/colourSelector';
 
-export default function CharacterCard() {
+export default function CharacterCard({characterName}) {
 
     const [characterData, setCharacterData] = useState("");
     const [characterIcon, setCharacterIcon] = useState("");
 
     useEffect(() => {
-        fetch("https://genshin.jmp.blue/characters/albedo")
+        fetch(`https://genshin.jmp.blue/characters/${characterName}`)
         .then(response => response.json())
         .then(data => setCharacterData(data))
         .catch(e => `Error: ${e}`);
 
-        fetch("https://genshin.jmp.blue/characters/albedo/icon-big")
+        fetch(`https://genshin.jmp.blue/characters/${characterName}/icon-big`)
         .then(response => response.blob())
         .then(blob => setCharacterIcon(URL.createObjectURL(blob)))
         .catch(e => `Error: ${e}`);
@@ -28,9 +28,8 @@ export default function CharacterCard() {
         document.title = "Characters | Genshindex";
     }, []);
 
-
         return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: 345 }} >
         <a href="./characterInfo" className="cardLink">
           <CardMedia
             component="img"
