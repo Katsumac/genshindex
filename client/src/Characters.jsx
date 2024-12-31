@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 
+import Grid from '@mui/material/Grid2'
 import CharacterCard from "./components/CharacterCard";
 
 export default function Characters() {
@@ -16,10 +17,17 @@ export default function Characters() {
     }, [])
 
     return (
-        <div>
-            {characterList.map((character) => {
-                return <CharacterCard characterName={character} key={character + "Card"}/>
-            })}
-        </div>
+        <Grid
+            container
+            columnSpacing={{xs: 1, sm: 1, md: 1}}
+            rowSpacing={{xs: 2, md: 5}}
+            columns={{xs: 2, sm: 6, md: 12}}
+            justifyContent={"space-evenly"}>
+                {characterList.map((character, i) => {
+                    return <Grid key={i} size={{xs: 1, sm: 2, md: 3}} display="flex" justifyContent={'center'}>
+                                <CharacterCard characterName={character} key={character + "Card"}/>
+                            </Grid>
+                })}
+        </Grid>
     )
 }
