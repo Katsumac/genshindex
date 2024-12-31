@@ -3,10 +3,13 @@
     color: inherit;
 }
 
+.box {
+    display: inline-block;
+}
+
 .box:hover {
     transform: scale(1.05);
     transition: all 0.75s;
-    
 }
 
 .box:not(:hover) {
