@@ -102,7 +102,11 @@ export default function Navbar() {
                 </MenuItem>
 
                 <MenuItem key="Characters" onClick={handleCloseNavMenu}>
-                  <a href="/charactesr" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Characters</Typography></a>
+                  <a href="/characters" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Characters</Typography></a>
+                </MenuItem>
+
+                <MenuItem key="Weapons" onClick={handleCloseNavMenu}>
+                  <a href="/weapons" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Weapons</Typography></a>
                 </MenuItem>
 
                 <MenuItem key="Profile" onClick={handleCloseNavMenu}>
@@ -152,6 +156,16 @@ export default function Navbar() {
                 sx={{ my: 2, color: 'white', display: 'block' }}
                 >
                   Characters
+                </Button>
+              </a>
+              <a href="/weapons" className="menuItem">
+                <Button
+                key="Weapons"
+                src="/weapons"
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  Weapons
                 </Button>
               </a>
               <a href="/profile" className="menuItem">

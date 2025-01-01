@@ -43,7 +43,7 @@ export default function WeaponCard({weaponName}) {
               {weaponData.name}
             </Typography>
             <RarityStars rarity={Number(weaponData.rarity)} entityName={weaponData.name} />
-            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+            <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
                 {weaponData.type}
             </Typography>
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
