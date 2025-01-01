@@ -1,4 +1,4 @@
-export default function colorSelector(element) {
+export default function elementColorSelector(element) {
     switch (element) {
         case "Anemo":
             return "#3DB3B7";
