@@ -8,33 +8,20 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 
 import "../style/Navbar.css"
 
-const pages = ["Home", "Profile"];
-
 export default function Navbar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const [anchorElUser, setAnchorElUser] = useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   return (
@@ -141,7 +128,6 @@ export default function Navbar() {
               <a href="/" className="menuItem">
                 <Button
                 key="Home"
-                src="/"
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
                 >
@@ -151,7 +137,6 @@ export default function Navbar() {
               <a href="/characters" className="menuItem">
                 <Button
                 key="Characters"
-                src="/characters"
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
                 >
@@ -161,7 +146,6 @@ export default function Navbar() {
               <a href="/weapons" className="menuItem">
                 <Button
                 key="Weapons"
-                src="/weapons"
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
                 >
@@ -171,7 +155,6 @@ export default function Navbar() {
               <a href="/profile" className="menuItem">
                 <Button
                 key="Profile"
-                src="/profile"
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
