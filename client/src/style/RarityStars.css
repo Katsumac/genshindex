@@ -1,0 +1,8 @@
+.rarityStar {
+    color: #ffc000;
+}
+
+.starsSpan {
+    display: flex;
+    align-Items: center;
+}
