@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import RarityStars from './RarityStars';
 import "../style/Card.css"
 
-import colorSelector from '../js/colourSelector';
+import elementColourSelector from '../js/elementColourSelector';
 
 export default function CharacterCard({characterName}) {
 
@@ -36,14 +36,14 @@ export default function CharacterCard({characterName}) {
             alt={characterData.name}
             height="250"
             image={characterIcon}
-            sx={{bgcolor: colorSelector(characterData.vision)}}
+            sx={{bgcolor: elementColourSelector(characterData.vision)}}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {characterData.name}
             </Typography>
-            <RarityStars rarity={Number(characterData.rarity)} characterName={characterData.name} />
-            <Typography variant="body2" sx={{ color: colorSelector(characterData.vision) }}>
+            <RarityStars rarity={characterData.rarity} entityName={characterData.name} />
+            <Typography variant="body2" sx={{ color: elementColourSelector(characterData.vision) }}>
                 {characterData.vision}
             </Typography>
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>

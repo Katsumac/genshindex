@@ -10,6 +10,7 @@ import CharacterInfo from './CharacterInfo';
 import Profile from './Profile';
 import EditProfile from './EditProfile';
 import Characters from './Characters';
+import Weapons from './Weapons';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/registration" element={<Registration />} />
           <Route exact path="/characters" element={<Characters />} />
           <Route exact path="/characters/:name" element={<CharacterInfo />} />
+          <Route exact path="/weapons" element={<Weapons />} />
           <Route exact path="/profile" element={<Profile />} />
           <Route exact path="/editprofile" element={<EditProfile />} />
         </Routes>
