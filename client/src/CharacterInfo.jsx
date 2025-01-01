@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import StarButton from "./components/StarButton";
-import BioTable from "./components/BioTable";
+import SummaryTable from "./components/SummaryTable";
 import AbilityTable from "./components/AbilityTable";
+import RarityStars from "./components/RarityStars";
 import Typography from "@mui/material/Typography";
 import "./style/CharacterInfo.css"
 
@@ -27,8 +28,8 @@ export default function CharacterInfo() {
             .catch(e => `Error: ${e}`);
         }, []);
 
-        const bioData = [
-            {category: "Rarity", description: characterData.rarity},
+        const summaryData = [
+            {category: "Rarity", description: <RarityStars rarity={characterData.rarity} entityName={characterData.name} />},
             {category: "Vision", description: characterData.vision},
             {category: "Weapon", description: characterData.weapon},
             {category: "Constellation Name", description: characterData.constellation},
@@ -53,7 +54,7 @@ export default function CharacterInfo() {
 
                 <Typography variant ="h4" component="h2" sx={{mt: 6, mb: 1}}>Bio</Typography>
                 
-                <BioTable bioData={bioData}/>
+                <SummaryTable summaryData={summaryData}/>
                 
                 <Typography variant ="h4" component="h2" sx={{mt: 3, mb: 1}}>Skills</Typography>
                 {characterData && <AbilityTable abilityData={characterData.skillTalents}/>}

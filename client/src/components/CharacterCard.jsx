@@ -43,7 +43,7 @@ export default function CharacterCard({characterName}) {
               {characterData.name}
             </Typography>
             <RarityStars rarity={characterData.rarity} entityName={characterData.name} />
-            <Typography variant="body2" sx={{ color: elementColourSelector(characterData.vision) }}>
+            <Typography variant="body2" sx={{ color: elementColourSelector(characterData.vision), mt: 1 }}>
                 {characterData.vision}
             </Typography>
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>

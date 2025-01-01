@@ -7,7 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-export default function BioTable({ bioData }) {
+export default function SummaryTable({ summaryData }) {
 
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -39,12 +39,12 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
           </TableRow>
         </TableHead>
         <TableBody>
-          {bioData.map((bio) => (
-            <StyledTableRow key={bio.category}>
+          {summaryData.map((summary) => (
+            <StyledTableRow key={summary.category}>
               <StyledTableCell component="th" scope="row" style={{whiteSpace:"pre-wrap"}}>
-                {bio.category}
+                {summary.category}
               </StyledTableCell>
-              <StyledTableCell align="left" style={{whiteSpace:"pre-wrap"}}>{bio.description}</StyledTableCell>
+              <StyledTableCell align="left" style={{whiteSpace:"pre-wrap"}}>{summary.description}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>

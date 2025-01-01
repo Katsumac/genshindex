@@ -6,11 +6,13 @@ import Navbar from './components/navbar';
 import Home from './Home';
 import Login from './Login';
 import Registration from './Registration';
+import Characters from './Characters';
 import CharacterInfo from './CharacterInfo';
+import Weapons from './Weapons';
+import WeaponInfo from './WeaponInfo';
+
 import Profile from './Profile';
 import EditProfile from './EditProfile';
-import Characters from './Characters';
-import Weapons from './Weapons';
 
 function App() {
   return (
@@ -24,6 +26,7 @@ function App() {
           <Route exact path="/characters" element={<Characters />} />
           <Route exact path="/characters/:name" element={<CharacterInfo />} />
           <Route exact path="/weapons" element={<Weapons />} />
+          <Route exact path="/weapons/:name" element={<WeaponInfo />} />
           <Route exact path="/profile" element={<Profile />} />
           <Route exact path="/editprofile" element={<EditProfile />} />
         </Routes>
