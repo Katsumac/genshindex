@@ -10,7 +10,8 @@ import Characters from './Characters';
 import CharacterInfo from './CharacterInfo';
 import Weapons from './Weapons';
 import WeaponInfo from './WeaponInfo';
-
+import Artifacts from './Artifacts';
+import ArtifactInfo from './ArtifactInfo';
 import Profile from './Profile';
 import EditProfile from './EditProfile';
 
@@ -27,6 +28,8 @@ function App() {
           <Route exact path="/characters/:name" element={<CharacterInfo />} />
           <Route exact path="/weapons" element={<Weapons />} />
           <Route exact path="/weapons/:name" element={<WeaponInfo />} />
+          <Route exact path="/artifacts" element={<Artifacts />} />
+          <Route exact path="/artifacts/:name" element={<ArtifactInfo />} />
           <Route exact path="/profile" element={<Profile />} />
           <Route exact path="/editprofile" element={<EditProfile />} />
         </Routes>
