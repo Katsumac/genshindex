@@ -5,21 +5,14 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import RarityStars from './RarityStars';
-import "../style/Card.css"
-
+import artifactPieceSelector from "../js/artifactPieceSelector";
 import rarityColourSelector from '../js/rarityColourSelector';
+import "../style/Card.css"
 
 export default function ArtifactCard({artifactName}) {
 
     const [artifactData, setArtifactData] = useState("");
     const [artifactIcon, setArtifactIcon] = useState("");
-    
-    const artifactPiece = () => {
-        if (artifactName.substring(0, 7) === "prayers") {
-            return "circlet-of-logos";
-        }
-        return "flower-of-life";
-    }
 
     useEffect(() => {
         fetch(`https://genshin.jmp.blue/artifacts/${artifactName}`)
@@ -27,7 +20,7 @@ export default function ArtifactCard({artifactName}) {
         .then(data => setArtifactData(data))
         .catch(e => `Error: ${e}`);
 
-        fetch(`https://genshin.jmp.blue/artifacts/${artifactName}/${artifactPiece()}`)
+        fetch(`https://genshin.jmp.blue/artifacts/${artifactName}/${artifactPieceSelector(artifactName)}`)
         .then(response => response.blob())
         .then(blob => setArtifactIcon(URL.createObjectURL(blob)))
         .catch(e => `Error: ${e}`);
