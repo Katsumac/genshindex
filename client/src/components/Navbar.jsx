@@ -96,6 +96,10 @@ export default function Navbar() {
                   <a href="/weapons" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Weapons</Typography></a>
                 </MenuItem>
 
+                <MenuItem key="Artifacts" onClick={handleCloseNavMenu}>
+                  <a href="/artifacts" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Artifacts</Typography></a>
+                </MenuItem>
+
                 <MenuItem key="Profile" onClick={handleCloseNavMenu}>
                   <a href="/profile" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Profile</Typography></a>
                 </MenuItem>
@@ -152,6 +156,15 @@ export default function Navbar() {
                   Weapons
                 </Button>
               </a>
+              <a href="/artifacts" className="menuItem">
+                <Button
+                key="Artifacts"
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  Artifacts
+                </Button>
+              </a>              
               <a href="/profile" className="menuItem">
                 <Button
                 key="Profile"
