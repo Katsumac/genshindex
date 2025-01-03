@@ -42,7 +42,7 @@ export default function WeaponCard({weaponName}) {
             <Typography gutterBottom variant="h5" component="div">
               {weaponData.name}
             </Typography>
-            <RarityStars rarity={Number(weaponData.rarity)} entityName={weaponData.name} />
+            <RarityStars rarity={weaponData.rarity} entityName={weaponData.name} />
             <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
                 {weaponData.type}
             </Typography>
