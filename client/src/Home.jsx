@@ -8,6 +8,7 @@ export default function Home() {
         //     .then(response => response.json())
         //     .then(data => setMessage(data.message))
         //     .catch(e => `Error: ${e}`);
+        document.title = "Home | GenshinDex";
     }, []);
 
     return (

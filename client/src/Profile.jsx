@@ -11,7 +11,7 @@ export default function Profile() {
             //     .then(response => response.json())
             //     .then(data => setMessage(data.message))
             //     .catch(e => `Error: ${e}`);
-            document.title = "GenshinDex - Your Profile";
+            document.title = "Your Profile | GenshinDex";
         }, []);
     
         return (

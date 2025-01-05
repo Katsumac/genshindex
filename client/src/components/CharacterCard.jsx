@@ -25,7 +25,6 @@ export default function CharacterCard({characterName}) {
         .then(blob => setCharacterIcon(URL.createObjectURL(blob)))
         .catch(e => `Error: ${e}`);
 
-        document.title = "Characters | Genshindex";
     }, []);
 
         return (

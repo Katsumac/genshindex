@@ -25,7 +25,6 @@ export default function ArtifactCard({artifactName}) {
         .then(blob => setArtifactIcon(URL.createObjectURL(blob)))
         .catch(e => `Error: ${e}`);
 
-        document.title = "Artifacts | Genshindex";
     }, []);
 
         return (

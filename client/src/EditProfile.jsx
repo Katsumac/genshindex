@@ -11,7 +11,7 @@ export default function EditProfile() {
             //     .then(response => response.json())
             //     .then(data => setMessage(data.message))
             //     .catch(e => `Error: ${e}`);
-            document.title = "GenshinDex - Edit Profile";
+            document.title = "Edit Profile | GenshinDex";
         }, []);
     
         return (

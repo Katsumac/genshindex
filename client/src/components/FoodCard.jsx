@@ -1,0 +1,53 @@
+import { useState, useEffect } from 'react';
+
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import RarityStars from './RarityStars';
+import "../style/Card.css"
+
+import rarityColourSelector from '../js/rarityColourSelector';
+
+export default function FoodCard({foodName}) {
+
+    const [foodData, setFoodData] = useState("");
+    const [foodIcon, setFoodIcon] = useState("");
+
+    useEffect(() => {
+        fetch(`https://genshin.jmp.blue/consumables/food`)
+        .then(response => response.json())
+        .then(data => setFoodData(data))
+        .catch(e => `Error: ${e}`);
+
+        fetch(`https://genshin.jmp.blue/consumables/food/${foodName}`)
+        .then(response => response.blob())
+        .then(blob => setFoodIcon(URL.createObjectURL(blob)))
+        .catch(e => `Error: ${e}`);
+
+
+    }, []);
+
+        return (
+        <Card sx={{ maxWidth: 250, m: 1 }} className="box">
+          <a href={`./foods/${foodName}`} className="cardLink box">
+          <CardMedia
+            component="img"
+            alt={foodData && foodData[foodName].name}
+            height="250"
+            image={foodIcon}
+            sx={{bgcolor: rarityColourSelector(foodData && foodData[foodName].rarity)}}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              {foodData && foodData[foodName].name}
+            </Typography>
+            <RarityStars rarity={foodData && foodData[foodName].rarity} entityName={foodData && foodData[foodName].name} />
+            <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
+                {foodData && foodData[foodName].type}
+            </Typography>
+          </CardContent>
+          </a>
+        </Card>
+      );
+    }

@@ -12,7 +12,7 @@ export default function Login() {
         //     .then(response => response.json())
         //     .then(data => setMessage(data.message))
         //     .catch(e => `Error: ${e}`);
-            document.title = "GenshinDex - Login";
+            document.title = "Login | GenshinDex";
     }, []);
 
     return (

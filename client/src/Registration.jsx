@@ -11,7 +11,7 @@ export default function Registration() {
             //     .then(response => response.json())
             //     .then(data => setMessage(data.message))
             //     .catch(e => `Error: ${e}`);
-            document.title = "GenshinDex - Registration"
+            document.title = "Registration | Genshindex";
         }, []);
     
         return (
