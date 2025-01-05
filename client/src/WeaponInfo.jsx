@@ -5,7 +5,7 @@ import StarButton from "./components/StarButton";
 import SummaryTable from "./components/SummaryTable";
 import RarityStars from "./components/RarityStars";
 import Typography from "@mui/material/Typography";
-import "./style/WeaponInfo.css"
+import "./style/Info.css"
 
 export default function WeaponInfo() {
         const [weaponData, setWeaponData] = useState("");
@@ -40,7 +40,7 @@ export default function WeaponInfo() {
         return (
             <div>
                 <Typography variant="h3" component="h2" sx={{mb: 6}}>{ weaponData.name }</Typography>
-                <img src={weaponIcon} id="weaponIcon" />
+                <img src={weaponIcon} id="icon" />
     
                 <Typography variant ="h6" component="h2" sx={{mt: 3, mb: 1}} >Favourite 
                 </Typography>

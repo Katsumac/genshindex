@@ -6,7 +6,7 @@ import SummaryTable from "./components/SummaryTable";
 import AbilityTable from "./components/AbilityTable";
 import RarityStars from "./components/RarityStars";
 import Typography from "@mui/material/Typography";
-import "./style/CharacterInfo.css"
+import "./style/Info.css"
 
 export default function CharacterInfo() {
         const [characterData, setCharacterData] = useState("");
@@ -45,7 +45,7 @@ export default function CharacterInfo() {
         return (
             <div>
                 <Typography variant="h3" component="h2" sx={{mb: 6}}>{ characterData.name }</Typography>
-                <img src={characterIcon} id="characterIcon" />
+                <img src={characterIcon} id="icon" />
     
                 <Typography variant ="h6" component="h2" sx={{mt: 3, mb: 1}} >Favourite 
                 </Typography>

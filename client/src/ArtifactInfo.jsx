@@ -6,7 +6,7 @@ import SummaryTable from "./components/SummaryTable";
 import RarityStars from "./components/RarityStars";
 import Typography from "@mui/material/Typography";
 import artifactPieceSelector from "./js/artifactPieceSelector";
-import "./style/ArtifactInfo.css"
+import "./style/Info.css"
 
 export default function ArtifactInfo() {
         const [artifactData, setArtifactData] = useState("");
@@ -38,7 +38,7 @@ export default function ArtifactInfo() {
         return (
             <div>
                 <Typography variant="h3" component="h2" sx={{mb: 6}}>{ artifactData.name }</Typography>
-                <img src={artifactIcon} id="artifactIcon" />
+                <img src={artifactIcon} id="icon" />
     
                 <Typography variant ="h6" component="h2" sx={{mt: 3, mb: 1}} >Favourite 
                 </Typography>
