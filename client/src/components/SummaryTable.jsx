@@ -44,7 +44,15 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
               <StyledTableCell component="th" scope="row" style={{whiteSpace:"pre-wrap"}}>
                 {summary.category}
               </StyledTableCell>
-              <StyledTableCell align="left" style={{whiteSpace:"pre-wrap"}}>{summary.description}</StyledTableCell>
+
+              {/* Check if the category is an array. If it is, map it */}
+              {!Array.isArray(summary.description) ? <StyledTableCell align="left" style={{whiteSpace:"pre-wrap"}}>{summary.description}</StyledTableCell> :
+
+              <StyledTableCell align="left" style={{whiteSpace:"pre-wrap"}}>
+              {summary.description.map((ingredient) => {
+                return <p key={ingredient.item}>{ingredient.item}: {ingredient.quantity}</p>
+              })} </StyledTableCell> }
+              
             </StyledTableRow>
           ))}
         </TableBody>
