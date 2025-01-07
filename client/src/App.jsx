@@ -16,6 +16,7 @@ import Foods from './Food';
 import FoodInfo from './FoodInfo';
 import Profile from './Profile';
 import EditProfile from './EditProfile';
+import NotFound from './NotFound';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route exact path="/food/:name" element={<FoodInfo />} />          
           <Route exact path="/profile" element={<Profile />} />
           <Route exact path="/editprofile" element={<EditProfile />} />
+          <Route exact path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </>
