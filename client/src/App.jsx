@@ -2,7 +2,7 @@ import './style/App.css'
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Navbar from './components/navbar';
+import Navbar from './components/Navbar';
 import Home from './Home';
 import Login from './Login';
 import Registration from './Registration';
@@ -12,7 +12,7 @@ import Weapons from './Weapons';
 import WeaponInfo from './WeaponInfo';
 import Artifacts from './Artifacts';
 import ArtifactInfo from './ArtifactInfo';
-import Foods from './Foods';
+import Foods from './Food';
 import FoodInfo from './FoodInfo';
 import Profile from './Profile';
 import EditProfile from './EditProfile';
@@ -32,8 +32,8 @@ function App() {
           <Route exact path="/weapons/:name" element={<WeaponInfo />} />
           <Route exact path="/artifacts" element={<Artifacts />} />
           <Route exact path="/artifacts/:name" element={<ArtifactInfo />} />
-          <Route exact path="/foods" element={<Foods />} />
-          <Route exact path="/foods/:name" element={<FoodInfo />} />          
+          <Route exact path="/food" element={<Foods />} />
+          <Route exact path="/food/:name" element={<FoodInfo />} />          
           <Route exact path="/profile" element={<Profile />} />
           <Route exact path="/editprofile" element={<EditProfile />} />
         </Routes>

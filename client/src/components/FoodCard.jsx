@@ -23,14 +23,14 @@ export default function FoodCard({foodName}) {
         fetch(`https://genshin.jmp.blue/consumables/food/${foodName}`)
         .then(response => response.blob())
         .then(blob => setFoodIcon(URL.createObjectURL(blob)))
-        .catch(e => `Error: ${e}`);
+        .catch(e => console.log(`Error: ${e}`));
 
 
     }, []);
 
         return (
         <Card sx={{ maxWidth: 250, m: 1 }} className="box">
-          <a href={`./foods/${foodName}`} className="cardLink box">
+          <a href={`./food/${foodName}`} className="cardLink box">
           <CardMedia
             component="img"
             alt={foodData && foodData[foodName].name}

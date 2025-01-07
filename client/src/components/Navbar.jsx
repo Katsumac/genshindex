@@ -30,7 +30,7 @@ export default function Navbar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
 
-          {/* For larger screens */}
+          {/* For smaller screens */}
           {/* Logo */}
           <a href="/"><img src={"/src/img/paimonSmile.png"} id="paimonNavImg" /></a>
 
@@ -100,6 +100,10 @@ export default function Navbar() {
                   <a href="/artifacts" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Artifacts</Typography></a>
                 </MenuItem>
 
+                <MenuItem key="Food" onClick={handleCloseNavMenu}>
+                  <a href="/food" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Food</Typography></a>
+                </MenuItem>
+
                 <MenuItem key="Profile" onClick={handleCloseNavMenu}>
                   <a href="/profile" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Profile</Typography></a>
                 </MenuItem>
@@ -107,7 +111,8 @@ export default function Navbar() {
             </Menu>
           </Box>
 
-          {/* For smaller screens */}
+
+          {/* For larger screens */}
           <Typography
             variant="h5"
             noWrap
@@ -163,6 +168,15 @@ export default function Navbar() {
                 sx={{ my: 2, color: 'white', display: 'block' }}
                 >
                   Artifacts
+                </Button>
+              </a>
+              <a href="/food" className="menuItem">
+                <Button
+                key="Food"
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  Food
                 </Button>
               </a>              
               <a href="/profile" className="menuItem">

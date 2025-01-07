@@ -2,24 +2,24 @@ import { useState, useEffect } from 'react';
 
 import Grid from '@mui/material/Grid2'
 import Typography from '@mui/material/Typography';
-import WeaponCard from "./components/WeaponCard"
+import FoodCard from "./components/FoodCard"
 
-export default function Weapons() {
+export default function Foods() {
 
-    const [weaponList, setWeaponList] = useState([]);
+    const [foodList, setFoodList] = useState([]);
 
     useEffect(() => {
-        fetch("https://genshin.jmp.blue/weapons")
+        fetch("https://genshin.jmp.blue/consumables/food")
         .then(response => response.json())
-        .then(data => setWeaponList(data))
-        .catch(e => `Error: ${e}`);
+        .then(data => setFoodList(data))
+        .catch(e => console.log(`Error: ${e}`));
 
-        document.title = "Weapons | GenshinDex";
-    }, [])
+        document.title = "Food | GenshinDex"
+    })
 
-    return (
+    return(
         <>
-            <Typography variant="h3" component="h2" sx={{mb: 6}}>Weapons</Typography>
+            <Typography variant="h3" component="h2" sx={{mb: 6}}>Food</Typography>
             <Grid
                 container
                 columnSpacing={{xs: 1, sm: 1, md: 1}}
@@ -27,10 +27,10 @@ export default function Weapons() {
                 columns={{xs: 2, sm: 6, md: 12}}
                 justifyContent={"space-evenly"}
                 sx={{mb: 6}}>
-                    {weaponList.map((weapon, i) => {
+                    {Object.entries(foodList).map((food, i) => {
                         return <Grid key={i} size={{xs: 1, sm: 2, md: 3}} display="flex" justifyContent={'center'}>
-                                    <WeaponCard weaponName={weapon} key={weapon + "Card"}/>
-                                </Grid>
+                                    <FoodCard foodName={food[0]} />
+                               </Grid>
                     })}
             </Grid>
         </>
