@@ -23,7 +23,7 @@ export default function FoodCard({foodName}) {
         fetch(`https://genshin.jmp.blue/consumables/food/${foodName}`)
         .then(response => response.blob())
         .then(blob => setFoodIcon(URL.createObjectURL(blob)))
-        .catch(e => `Error: ${e}`);
+        .catch(e => console.log(`Error: ${e}`));
 
 
     }, []);
