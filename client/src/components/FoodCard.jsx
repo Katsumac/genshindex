@@ -30,7 +30,7 @@ export default function FoodCard({foodName}) {
 
         return (
         <Card sx={{ maxWidth: 250, m: 1 }} className="box">
-          <a href={`./foods/${foodName}`} className="cardLink box">
+          <a href={`./food/${foodName}`} className="cardLink box">
           <CardMedia
             component="img"
             alt={foodData && foodData[foodName].name}
