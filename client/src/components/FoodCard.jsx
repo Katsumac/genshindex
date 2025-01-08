@@ -39,7 +39,7 @@ export default function FoodCard({foodName}) {
             sx={{bgcolor: rarityColourSelector(foodData && foodData[foodName].rarity)}}
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h6" component="div">
               {foodData && foodData[foodName].name}
             </Typography>
             <RarityStars rarity={foodData && foodData[foodName].rarity} entityName={foodData && foodData[foodName].name} />
