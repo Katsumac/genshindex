@@ -1,12 +1,7 @@
 import { useEffect, useState } from "react";
 
-import Grid from '@mui/material/Grid2'
 import Typography from "@mui/material/Typography";
-import Link from "@mui/material/Link";
-import CharacterCard from "./components/CharacterCard";
-import WeaponCard from "./components/WeaponCard";
-import ArtifactCard from "./components/ArtifactCard";
-import FoodCard from "./components/FoodCard";
+import PreviewRow from "./components/PreviewRow";
 
 export default function Home() {
     const [characterList, setCharacterList] = useState([]);
@@ -40,40 +35,16 @@ export default function Home() {
 
     return (
         <div>
-            <Typography variant="h3" component="h2" sx={{mb: 6}}>Welcome to GenshinDex!</Typography>
-<Grid
-container justifyContent={"space-between"}>
-<Typography variant="h5" sx={{ml: 3, mb: 3}}>Characters</Typography>
-<Link href="/characters" variant="h5" underline="none" sx={{mr: 3}}>View More</Link>
-</Grid>
-            <Grid
-                container
-                columnSpacing={{xs: 1, sm: 1, md: 1}}
-                rowSpacing={{xs: 2, md: 5}}
-                columns={{xs: 2, sm: 6, md: 12}}
-                justifyContent={"space-evenly"}
-                sx={{mb: 6}}>
-                    {characterList.map((character, i) => {
-                        return <Grid key={i} size={{xs: 1, sm: 2, md: 3}} display="flex" justifyContent={'center'}>
-                                    <CharacterCard characterName={character} key={character + "Card"}/>
-                                </Grid>
-                    })}
-            </Grid>
+            <Typography variant="h3" component="h2" sx={{mb: 3}}>Welcome to GenshinDex!</Typography>
+            <Typography variant="h5" component="h2" sx={{mb: 12}}>Enjoy browsing Genshin's characters, weapons, artifacts, and food~</Typography>
 
-            <Typography variant="h5" sx={{mb: 3}}>Weapons</Typography>
-            {weaponList.map(weapon => {
-                return <WeaponCard weaponName={weapon} />
-            })}
+            <PreviewRow title="Characters" destination="/characters" dataList={characterList} />
 
-            <Typography variant="h5" sx={{mb: 3}}>Artifacts</Typography>
-            {artifactList.map(artifact => {
-                return <ArtifactCard artifactName={artifact} />
-            })}
+            <PreviewRow title="Weapons" destination="/weapons" dataList={weaponList} />
 
-            <Typography variant="h5" sx={{mb: 3}}>Food</Typography>            
-            {foodList.map(food => {
-                return <FoodCard foodName={food[0]} />
-            })}
+            <PreviewRow title="Artifacts" destination="/artifacts" dataList={artifactList} />
+
+            <PreviewRow title="Food" destination="/food" dataList={foodList} />
         </div>
     )
 }
