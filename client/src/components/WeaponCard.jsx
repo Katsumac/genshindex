@@ -38,7 +38,7 @@ export default function WeaponCard({weaponName}) {
             sx={{bgcolor: rarityColourSelector(weaponData.rarity)}}
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h6" component="div">
               {weaponData.name}
             </Typography>
             <RarityStars rarity={weaponData.rarity} entityName={weaponData.name} />

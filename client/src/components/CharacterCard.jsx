@@ -38,7 +38,7 @@ export default function CharacterCard({characterName}) {
             sx={{bgcolor: elementColourSelector(characterData.vision)}}
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h6" component="div">
               {characterData.name}
             </Typography>
             <RarityStars rarity={characterData.rarity} entityName={characterData.name} />
