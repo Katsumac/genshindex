@@ -21,7 +21,7 @@ export default function PreviewRow({title, destination, dataList}) {
                 rowSpacing={{xs: 2, md: 5}}
                 columns={{xs: 2, sm: 6, md: 12}}
                 justifyContent={"space-evenly"}
-                sx={{mb: 6}}>
+                sx={{mb: 12}}>
                     {dataList.map((data, i) => {
                         return <Grid key={i} size={{xs: 1, sm: 2, md: 3}} display="flex" justifyContent={'center'}>
                                     {title === "Characters" && <CharacterCard characterName={data} key={data + "Card"}/>}
