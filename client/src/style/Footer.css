@@ -12,10 +12,14 @@
     color: white;
 }
 
+#footerSiteTitle {
+    color: white;
+}
+
 .footerLink {
-    color: white !important;
+    color: lightgrey !important;
 } 
 
 .footerLink:hover {
-    color: blue !important;
+    color: white !important;
 } 
