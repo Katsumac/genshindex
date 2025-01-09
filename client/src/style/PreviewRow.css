@@ -1,7 +1,7 @@
-.MuiLink-underlineNone {
-    color: "#224488";
+.rowLink {
+    color: #224488 !important;
 } 
 
-.MuiLink-underlineNone:hover {
-    color: blue;
+.rowLink:hover {
+    color: cornflowerblue !important;
 } 

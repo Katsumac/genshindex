@@ -12,7 +12,7 @@ export default function PreviewRow({title, destination, dataList}) {
         <div>
             <Grid container justifyContent={"space-between"}>
                 <Typography variant="h5" sx={{ml: 3, mb: 3}}>{title}</Typography>
-                <Link href={destination} variant="h5" underline="none" sx={{mr: 3}} >View More</Link>
+                <Link href={destination} variant="h5" className="rowLink" underline="none" sx={{mr: 3}} >View More</Link>
             </Grid>
             
             <Grid

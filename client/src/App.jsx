@@ -3,6 +3,7 @@ import './style/App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Home from './Home';
 import Login from './Login';
 import Registration from './Registration';
@@ -40,6 +41,7 @@ function App() {
           <Route exact path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <Footer />
     </>
   )
 }

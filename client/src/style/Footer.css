@@ -1,0 +1,25 @@
+#bottomDiv {
+    position: relative;
+    margin-top: 500px;
+}
+
+#footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #224488;
+    color: white;
+}
+
+#footerSiteTitle {
+    color: white;
+}
+
+.footerLink {
+    color: lightgrey !important;
+} 
+
+.footerLink:hover {
+    color: white !important;
+} 
