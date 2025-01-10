@@ -5,3 +5,8 @@
     display: block;
     margin: auto;
 }
+
+.contactIcon {
+    width: 50px;
+    height: auto;
+}
