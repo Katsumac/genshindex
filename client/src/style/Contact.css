@@ -1,0 +1,12 @@
+#profilePhoto {
+    border-radius: 50%;
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.contactIcon {
+    width: 50px;
+    height: auto;
+}

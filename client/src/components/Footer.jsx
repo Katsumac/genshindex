@@ -44,7 +44,7 @@ export default function Footer() {
                         <Stack direction="column" spacing={2} justifyContent="flex-start">
                             <Typography variant="h5" sx={{ ml: 3, mb: 3 }}>Info</Typography>
                             <Link href="/about" className="footerLink" variant="body2" underline="none" sx={{ ml: 3, mb: 3 }}>About</Link>
-                            <Link href="#" className="footerLink" variant="body2" underline="none" sx={{ ml: 3, mb: 3 }}>Contact</Link>
+                            <Link href="/contact" className="footerLink" variant="body2" underline="none" sx={{ ml: 3, mb: 3 }}>Contact</Link>
                         </Stack>
                     </Grid>
                 </Grid>
