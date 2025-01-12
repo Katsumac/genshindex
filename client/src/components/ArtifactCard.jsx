@@ -37,13 +37,13 @@ export default function ArtifactCard({artifactName}) {
             image={artifactIcon}
             sx={{bgcolor: rarityColourSelector(artifactData.max_rarity)}}
           />
+          </a>
           <CardContent>
             <Typography gutterBottom variant="h6" component="div">
               {artifactData.name}
             </Typography>
             <RarityStars rarity={artifactData.max_rarity} entityName={artifactData.name} />
           </CardContent>
-          </a>
         </Card>
       );
     }

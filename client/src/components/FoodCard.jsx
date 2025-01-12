@@ -38,6 +38,7 @@ export default function FoodCard({foodName}) {
             image={foodIcon}
             sx={{bgcolor: rarityColourSelector(foodData && foodData[foodName].rarity)}}
           />
+          </a>
           <CardContent>
             <Typography gutterBottom variant="h6" component="div">
               {foodData && foodData[foodName].name}
@@ -47,7 +48,6 @@ export default function FoodCard({foodName}) {
                 {foodData && foodData[foodName].type}
             </Typography>
           </CardContent>
-          </a>
         </Card>
       );
     }

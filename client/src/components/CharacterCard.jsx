@@ -37,6 +37,7 @@ export default function CharacterCard({characterName}) {
             image={characterIcon}
             sx={{bgcolor: elementColourSelector(characterData.vision)}}
           />
+          </a>
           <CardContent>
             <Typography gutterBottom variant="h6" component="div">
               {characterData.name}
@@ -49,7 +50,6 @@ export default function CharacterCard({characterName}) {
                 {characterData.weapon}
             </Typography>
           </CardContent>
-          </a>
         </Card>
       );
     }

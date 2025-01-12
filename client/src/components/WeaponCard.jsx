@@ -37,6 +37,7 @@ export default function WeaponCard({weaponName}) {
             image={weaponIcon}
             sx={{bgcolor: rarityColourSelector(weaponData.rarity)}}
           />
+          </a>
           <CardContent>
             <Typography gutterBottom variant="h6" component="div">
               {weaponData.name}
@@ -49,7 +50,6 @@ export default function WeaponCard({weaponName}) {
                 {weaponData.subStat}
             </Typography>
           </CardContent>
-          </a>
         </Card>
       );
     }
