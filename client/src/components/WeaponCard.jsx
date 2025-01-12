@@ -4,8 +4,11 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
 import RarityStars from './RarityStars';
+import StarButton from './StarButton';
 import "../style/Card.css"
+import "../style/StarButton.css"
 
 import rarityColourSelector from '../js/rarityColourSelector';
 
@@ -39,9 +42,12 @@ export default function WeaponCard({weaponName}) {
           />
           </a>
           <CardContent>
-            <Typography gutterBottom variant="h6" component="div">
-              {weaponData.name}
-            </Typography>
+            <Stack direction="row" justifyContent="space-between">
+              <Typography gutterBottom variant="h6" component="div">
+                {weaponData.name}
+              </Typography>
+              <StarButton />
+            </Stack>
             <RarityStars rarity={weaponData.rarity} entityName={weaponData.name} />
             <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
                 {weaponData.type}
