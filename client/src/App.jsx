@@ -19,6 +19,7 @@ import Profile from './Profile';
 import EditProfile from './EditProfile';
 import About from './About';
 import Contact from './Contact';
+import EasterEggInfo from './EasterEggInfo';
 import NotFound from './NotFound';
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           <Route exact path="/editprofile" element={<EditProfile />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/contact" element={<Contact />} />
+          <Route exact path="/paimon" element={<EasterEggInfo />} />
           <Route exact path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
