@@ -29,12 +29,11 @@ export default function Foods() {
                 justifyContent={"space-evenly"}
                 sx={{mb: 6}}>
                     {Object.entries(foodList).map((food, i) => {
-                        if (food[0] === "id") return
+                        if (food[0] === "id") return <EasterEgg />
                         return <Grid key={i} size={{xs: 1, sm: 2, md: 3}} display="flex" justifyContent={'center'}>
                                     <FoodCard foodName={food[0]} />
                                </Grid>
                     })}
-                <EasterEgg />
             </Grid>
         </>
     )
