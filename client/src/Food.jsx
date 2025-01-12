@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Grid from '@mui/material/Grid2'
 import Typography from '@mui/material/Typography';
 import FoodCard from "./components/FoodCard"
+import EasterEgg from './components/EasterEgg';
 
 export default function Foods() {
 
@@ -28,10 +29,12 @@ export default function Foods() {
                 justifyContent={"space-evenly"}
                 sx={{mb: 6}}>
                     {Object.entries(foodList).map((food, i) => {
+                        if (food[0] === "id") return
                         return <Grid key={i} size={{xs: 1, sm: 2, md: 3}} display="flex" justifyContent={'center'}>
                                     <FoodCard foodName={food[0]} />
                                </Grid>
                     })}
+                <EasterEgg />
             </Grid>
         </>
     )
