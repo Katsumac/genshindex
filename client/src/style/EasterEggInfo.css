@@ -1,0 +1,23 @@
+#angryPaimon {
+    display: flex;
+    margin: auto;
+    height: auto;
+}
+
+@media screen and (max-width: 599px) {
+    #angryPaimon {
+        width: 400px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 899px) {
+    #angryPaimon {
+        width: 500px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    #angryPaimon {
+        width: 800px;
+    }
+}
