@@ -13,6 +13,14 @@ export default function Characters() {
     const [characterList, setCharacterList] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
 
+    const handleSearchBarChange = (evt) => {
+        setSearchQuery(evt.target.value);
+    }
+
+    const runQuery = () => {
+        alert(searchQuery);
+    }
+
     useEffect(() => {
         fetch("https://genshin.jmp.blue/characters")
         .then(response => response.json())
@@ -27,8 +35,8 @@ export default function Characters() {
             <Typography variant="h3" component="h2" sx={{mb: 6}}>Characters</Typography>
             <div className="searchBar">
                 <Stack direction="row">
-                    <TextField fullWidth id="outlined-basic" label="Search" variant="outlined" size="medium" sx={{backgroundColor: "white"}} />
-                    <Button variant="contained" sx={{backgroundColor: "#ffc000"}}> Search </Button>
+                    <TextField fullWidth id="outlined-basic" name="search" value={searchQuery} label="Search" variant="outlined" size="medium" sx={{backgroundColor: "white"}} onChange={handleSearchBarChange} />
+                    <Button variant="contained" sx={{backgroundColor: "#ffc000"}} onClick={runQuery}> Search </Button>
                 </Stack>
             </div>
             <Grid
