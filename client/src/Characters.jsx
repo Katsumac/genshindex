@@ -19,6 +19,7 @@ export default function Characters() {
 
     return (
         <>
+            
             <Typography variant="h3" component="h2" sx={{mb: 6}}>Characters</Typography>
             <Grid
                 container

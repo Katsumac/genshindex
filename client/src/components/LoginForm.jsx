@@ -45,6 +45,7 @@ export default function LoginForm() {
                             id="loginPassword"
                             name="loginPassword"
                             label="Password"
+                            type="password"
                             variant="standard"
                             sx={{ minWidth: 300, pb: 5 }}
                             onChange={handleInputChange} />

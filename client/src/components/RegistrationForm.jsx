@@ -46,6 +46,7 @@ export default function RegistrationForm() {
                             id="registrationPassword"
                             name="registrationPassword"
                             label="Password"
+                            type="password"
                             variant="standard"
                             sx={{ minWidth: 300, pb: 2 }}
                             onChange={handleInputChange} />
@@ -55,6 +56,7 @@ export default function RegistrationForm() {
                             id="confirmRegistrationPassword"
                             name="confirmRegistrationPassword"
                             label="Confirm Password"
+                            type="password"
                             variant="standard"
                             sx={{ minWidth: 300, pb: 2 }}
                             onChange={handleInputChange} />
