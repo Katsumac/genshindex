@@ -2,23 +2,15 @@ import { useState, useEffect } from 'react';
 
 import Grid from '@mui/material/Grid2'
 import Typography from '@mui/material/Typography';
-import TextField from '@mui/material/TextField';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 import CharacterCard from "./components/CharacterCard";
-import "./style/SearchBar.css";
+import SearchBar from './components/SearchBar';
 
 export default function Characters() {
 
     const [characterList, setCharacterList] = useState([]);
-    const [searchQuery, setSearchQuery] = useState("");
 
-    const handleSearchBarChange = (evt) => {
-        setSearchQuery(evt.target.value);
-    }
-
-    const runQuery = () => {
-        alert(searchQuery);
+    const searchCharacters = (value) => {
+        console.log(value);
     }
 
     useEffect(() => {
@@ -34,10 +26,7 @@ export default function Characters() {
         <>
             <Typography variant="h3" component="h2" sx={{mb: 6}}>Characters</Typography>
             <div className="searchBar">
-                <Stack direction="row">
-                    <TextField fullWidth id="outlined-basic" name="search" value={searchQuery} label="Search" variant="outlined" size="medium" sx={{backgroundColor: "white"}} onChange={handleSearchBarChange} />
-                    <Button variant="contained" sx={{backgroundColor: "#ffc000"}} onClick={runQuery}> Search </Button>
-                </Stack>
+                <SearchBar runQuery={searchCharacters} />
             </div>
             <Grid
                 container
