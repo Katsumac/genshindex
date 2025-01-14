@@ -37,6 +37,7 @@ export default function LoginForm() {
                             name="loginEmail"
                             label="Email"
                             variant="standard"
+                            value={inputData.loginEmail}
                             sx={{ minWidth: 300, pb: 2 }}
                             onChange={handleInputChange} />
                     </div>
@@ -47,6 +48,7 @@ export default function LoginForm() {
                             label="Password"
                             type="password"
                             variant="standard"
+                            value={inputData.loginPassword}
                             sx={{ minWidth: 300, pb: 5 }}
                             onChange={handleInputChange} />
                     </div>
