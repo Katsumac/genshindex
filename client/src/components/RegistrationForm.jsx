@@ -38,6 +38,7 @@ export default function RegistrationForm() {
                             name="registrationEmail"
                             label="Email"
                             variant="standard"
+                            value={inputData.registrationEmail}
                             sx={{ minWidth: 300, pb: 2 }}
                             onChange={handleInputChange} />
                     </div>
@@ -46,7 +47,9 @@ export default function RegistrationForm() {
                             id="registrationPassword"
                             name="registrationPassword"
                             label="Password"
+                            type="password"
                             variant="standard"
+                            value={inputData.registrationPassword}
                             sx={{ minWidth: 300, pb: 2 }}
                             onChange={handleInputChange} />
                     </div>
@@ -55,16 +58,19 @@ export default function RegistrationForm() {
                             id="confirmRegistrationPassword"
                             name="confirmRegistrationPassword"
                             label="Confirm Password"
+                            type="password"
                             variant="standard"
+                            value={inputData.confirmRegistrationPassword}
                             sx={{ minWidth: 300, pb: 2 }}
                             onChange={handleInputChange} />
                     </div>
                     <div id="registerUsernameInput">
                         <TextField
                             id="registerUsername"
-                            name="registerUsername"
+                            name="registrationUsername"
                             label="Username"
                             variant="standard"
+                            value={inputData.registrationUsername}
                             sx={{ minWidth: 300, pb: 5 }}
                             onChange={handleInputChange} />
                     </div>
