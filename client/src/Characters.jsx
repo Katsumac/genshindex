@@ -47,11 +47,12 @@ export default function Characters() {
                 columns={{xs: 2, sm: 6, md: 12}}
                 justifyContent={"space-evenly"}
                 sx={{my: 6}}>
-                    {characterList.map((character, i) => {
+                    {characterList.length !== 0 ? characterList.map((character, i) => {
                         return <Grid key={i} size={{xs: 1, sm: 2, md: 3}} display="flex" justifyContent={'center'}>
                                     <CharacterCard characterName={character} key={character + "Card"}/>
                                 </Grid>
-                    })}
+                    }) : <Typography variant="body2" component="h2" sx={{mt: 3, mb: 6, maxWidth: 900}}> No characters found. </Typography>
+}
             </Grid>
         </>
     )
