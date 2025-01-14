@@ -4,13 +4,19 @@ import Grid from '@mui/material/Grid2'
 import Typography from '@mui/material/Typography';
 import CharacterCard from "./components/CharacterCard";
 import SearchBar from './components/SearchBar';
+import "./style/Paragraph.css"
 
 export default function Characters() {
 
     const [characterList, setCharacterList] = useState([]);
 
-    const searchCharacters = (value) => {
-        console.log(value);
+    const searchCharacters = (query) => {
+        fetch("https://genshin.jmp.blue/characters")
+        .then(response => response.json())
+        .then(data => {
+            setCharacterList(data.filter(name => name.includes(query)))
+        })
+        .catch(e => `Error: ${e}`);
     }
 
     useEffect(() => {
@@ -27,6 +33,12 @@ export default function Characters() {
             <Typography variant="h3" component="h2" sx={{mb: 6}}>Characters</Typography>
             <div className="searchBar">
                 <SearchBar runQuery={searchCharacters} />
+            </div>
+            <div className="paragraph">
+                <Typography variant="body2" component="h2" sx={{mt: 3, mb: 6, maxWidth: 900}}>
+                    For the Kamisato siblings, please search by their first name.
+                    If a character's name has two or more words, you may need use a dash in place of a space.
+                    For example: "traveler-anemo", or "arataki-itto".</Typography>
             </div>
             <Grid
                 container

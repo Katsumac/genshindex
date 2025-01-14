@@ -1,6 +1,6 @@
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
-import "./style/About.css"
+import "./style/Paragraph.css"
 
 export default function About() {
     return (
