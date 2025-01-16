@@ -64,6 +64,12 @@ export default function Food() {
         setIsDisabled(true);
         const newArr = {...foodList};
         Object.keys(foodList).map((food) => {
+            if (filterChoices.rarity === 6 || filterChoices.type === "Emergency Food") {
+                Object.keys(newArr).forEach((food) => {
+                    if (food !== "id") delete newArr[food];
+                })
+                return setFoodList({ ...newArr });
+            }
             if (foodList[food].rarity !== filterChoices.rarity && filterChoices.rarity !== "") {
                 delete newArr[food];
                 return setFoodList({ ...newArr });
