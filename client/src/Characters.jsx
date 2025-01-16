@@ -21,14 +21,24 @@ export default function Characters() {
         weapon: ""
     });
 
+    const [toggle, setToggle] = useState(0);
+    const [isDisabled, setIsDisabled] = useState(false);
+
     useEffect(() => {
         fetch("https://genshin.jmp.blue/characters")
             .then(response => response.json())
             .then(data => setCharacterList(data))
             .catch(e => `Error: ${e}`);
 
+        setFilterChoices((currFilterChoices) => {
+            currFilterChoices["rarity"] = "";
+            currFilterChoices["vision"] = "";
+            currFilterChoices["weapon"] = "";
+            return { ...currFilterChoices };
+        });
+
         document.title = "Characters | Genshindex";
-    }, [])
+    }, [toggle])
 
     const searchCharacters = (query) => {
         fetch("https://genshin.jmp.blue/characters")
@@ -41,18 +51,45 @@ export default function Characters() {
 
     const handleFilterChange = (evt) => {
         setFilterChoices((currFilterChoices) => {
-
             currFilterChoices[evt.target.name] = evt.target.value;
-            return {...currFilterChoices};
+            return { ...currFilterChoices };
         });
     }
 
     const filterCharacterList = () => {
-
+        setIsDisabled(true);
+        characterList.map((character) => {
+            fetch(`https://genshin.jmp.blue/characters/${character}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.rarity !== filterChoices.rarity && filterChoices.rarity !== "") {
+                        setCharacterList(prevChars => {
+                            return prevChars.filter((c) => c !== character)
+                        });
+                    }
+                    if (data.vision !== filterChoices.vision && filterChoices.vision !== "") {
+                        setCharacterList(prevChars => {
+                            return prevChars.filter((c) => c !== character)
+                        });
+                    }
+                    if (data.weapon !== filterChoices.weapon && filterChoices.weapon !== "") {
+                        setCharacterList(prevChars => {
+                            return prevChars.filter((c) => c !== character)
+                        });
+                    }
+                }
+                ).catch(e => `Error: ${e}`)
+        })
     }
 
+    // Triggers useEffect to reset characterList and filters
     const resetFilter = () => {
-
+        setIsDisabled(false);
+        if (toggle === 0) {
+            setToggle(1);
+        } else {
+            setToggle(0);
+        }
     }
 
     return (
@@ -68,12 +105,9 @@ export default function Characters() {
                     For example: "traveler-anemo", or "arataki-itto".
                     Of course, you may search with part of their names instead.</Typography>
             </div>
-            <p>{filterChoices.rarity}</p>
-            <p>{filterChoices.vision}</p>
-            <p>{filterChoices.weapon}</p>
             <div id="filter">
                 <Stack direction="row">
-                    <FormControl sx={{minWidth: 100, mr: 2, backgroundColor: "white"}}>
+                    <FormControl sx={{ minWidth: 100, mr: 2, backgroundColor: "white" }}>
                         <InputLabel id="charRarityLabel">Rarity</InputLabel>
                         <Select
                             labelId="charRarity"
@@ -87,7 +121,7 @@ export default function Characters() {
                             <MenuItem value={5}>5</MenuItem>
                         </Select>
                     </FormControl>
-                    <FormControl sx={{minWidth: 100, mr: 2, backgroundColor: "white"}}>
+                    <FormControl sx={{ minWidth: 100, mr: 2, backgroundColor: "white" }}>
                         <InputLabel id="charVisionLabel">Vision</InputLabel>
                         <Select
                             labelId="charVision"
@@ -106,7 +140,7 @@ export default function Characters() {
                             <MenuItem value="Pyro">Pyro</MenuItem>
                         </Select>
                     </FormControl>
-                    <FormControl sx={{minWidth: 100, backgroundColor: "white"}}>
+                    <FormControl sx={{ minWidth: 100, backgroundColor: "white" }}>
                         <InputLabel id="charWeaponLabel">Weapon</InputLabel>
                         <Select
                             labelId="charWeapon"
@@ -123,8 +157,8 @@ export default function Characters() {
                             <MenuItem value="Sword">Sword</MenuItem>
                         </Select>
                     </FormControl>
-                    <Button id="filterButton" variant="contained" sx={{backgroundColor: "#ffc000"}} onClick={filterCharacterList}> Filter </Button>
-                    <Button id="resetButton" variant="contained" sx={{backgroundColor: "#ffc000"}} onClick={resetFilter}> Reset </Button>
+                    <Button id="filterButton" variant="contained" sx={{ backgroundColor: "#ffc000" }} onClick={filterCharacterList} disabled={isDisabled}> Filter </Button>
+                    <Button id="resetButton" variant="contained" sx={{ backgroundColor: "#ffc000" }} onClick={resetFilter} disabled={!isDisabled}> Reset </Button>
                 </Stack>
             </div>
             <Grid
