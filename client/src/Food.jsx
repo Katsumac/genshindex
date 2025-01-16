@@ -13,7 +13,7 @@ import EasterEggCard from './components/EasterEggCard';
 import SearchBar from './components/SearchBar';
 import "./style/Paragraph.css"
 
-export default function Foods() {
+export default function Food() {
 
     const [foodList, setFoodList] = useState([]);
     const [filterChoices, setFilterChoices] = useState({
@@ -64,7 +64,6 @@ export default function Foods() {
         setIsDisabled(true);
         const newArr = {...foodList};
         Object.keys(foodList).map((food) => {
-            console.log(foodList[food].rarity + ", " + filterChoices.rarity);
             if (foodList[food].rarity !== filterChoices.rarity && filterChoices.rarity !== "") {
                 delete newArr[food];
                 return setFoodList({ ...newArr });
@@ -73,14 +72,11 @@ export default function Foods() {
                 delete newArr[food];
                 return setFoodList({ ...newArr });
             }
-
         }
         )
     }
 
-
-
-    // Triggers useEffect to reset characterList and filters
+    // Triggers useEffect to reset foodList and filters
     const resetFilter = () => {
         setIsDisabled(false);
         if (toggle === 0) {

@@ -63,18 +63,18 @@ export default function Characters() {
                 .then(response => response.json())
                 .then(data => {
                     if (data.rarity !== filterChoices.rarity && filterChoices.rarity !== "") {
-                        setCharacterList(prevChars => {
-                            return prevChars.filter((c) => c !== character)
+                        setCharacterList(currentCharacters => {
+                            return currentCharacters.filter((c) => c !== character)
                         });
                     }
                     if (data.vision !== filterChoices.vision && filterChoices.vision !== "") {
-                        setCharacterList(prevChars => {
-                            return prevChars.filter((c) => c !== character)
+                        setCharacterList(currentCharacters => {
+                            return currentCharacters.filter((c) => c !== character)
                         });
                     }
                     if (data.weapon !== filterChoices.weapon && filterChoices.weapon !== "") {
-                        setCharacterList(prevChars => {
-                            return prevChars.filter((c) => c !== character)
+                        setCharacterList(currentCharacters => {
+                            return currentCharacters.filter((c) => c !== character)
                         });
                     }
                 }
