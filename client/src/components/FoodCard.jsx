@@ -29,7 +29,7 @@ export default function FoodCard({ foodName }) {
       .catch(e => console.log(`Error: ${e}`));
 
 
-  }, []);
+  }, [foodName]);
 
   return (
     <Card sx={{ maxWidth: 250, m: 1 }} className="box">

@@ -13,7 +13,7 @@ import Weapons from './Weapons';
 import WeaponInfo from './WeaponInfo';
 import Artifacts from './Artifacts';
 import ArtifactInfo from './ArtifactInfo';
-import Foods from './Food';
+import Food from './Food';
 import FoodInfo from './FoodInfo';
 import Profile from './Profile';
 import EditProfile from './EditProfile';
@@ -37,7 +37,7 @@ function App() {
           <Route exact path="/weapons/:name" element={<WeaponInfo />} />
           <Route exact path="/artifacts" element={<Artifacts />} />
           <Route exact path="/artifacts/:name" element={<ArtifactInfo />} />
-          <Route exact path="/food" element={<Foods />} />
+          <Route exact path="/food" element={<Food />} />
           <Route exact path="/food/:name" element={<FoodInfo />} />          
           <Route exact path="/profile" element={<Profile />} />
           <Route exact path="/editprofile" element={<EditProfile />} />
