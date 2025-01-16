@@ -157,7 +157,7 @@ export default function Characters() {
                             <MenuItem value="Sword">Sword</MenuItem>
                         </Select>
                     </FormControl>
-                    <Button id="filterButton" variant="contained" sx={{ backgroundColor: "#ffc000" }} onClick={filterCharacterList} disabled={isDisabled}> Filter </Button>
+                    <Button id="filterButton" variant="contained" sx={{ backgroundColor: "#ffc000", mr: 1 }} onClick={filterCharacterList} disabled={isDisabled}> Filter </Button>
                     <Button id="resetButton" variant="contained" sx={{ backgroundColor: "#ffc000", mr: 2 }} onClick={resetFilter} disabled={!isDisabled}> Reset </Button>
                 </Stack>
             </div>
