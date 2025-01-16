@@ -99,15 +99,15 @@ export default function Characters() {
                 <SearchBar runQuery={searchCharacters} />
             </div>
             <div className="paragraph">
-                <Typography variant="body2" component="h2" sx={{ mt: 3, mb: 6, maxWidth: 900 }}>
+                <Typography variant="body2" component="h2" sx={{ mt: 3, mb: 6, mx: 2, maxWidth: 900 }}>
                     For the Kamisato siblings, please search by their first name.
                     If a character's name has two or more words, you may need use a dash in place of a space.
                     For example: "traveler-anemo", or "arataki-itto".
                     Of course, you may search with part of their names instead.</Typography>
             </div>
             <div id="filter">
-                <Stack direction="row">
-                    <FormControl sx={{ minWidth: 100, mr: 2, backgroundColor: "white" }}>
+                <Stack direction="row" justifyContent="center">
+                    <FormControl sx={{ minWidth: 100, mx: 2, backgroundColor: "white" }}>
                         <InputLabel id="charRarityLabel">Rarity</InputLabel>
                         <Select
                             labelId="charRarity"
@@ -140,7 +140,7 @@ export default function Characters() {
                             <MenuItem value="Pyro">Pyro</MenuItem>
                         </Select>
                     </FormControl>
-                    <FormControl sx={{ minWidth: 100, backgroundColor: "white" }}>
+                    <FormControl sx={{ minWidth: 100, mr: 2, backgroundColor: "white" }}>
                         <InputLabel id="charWeaponLabel">Weapon</InputLabel>
                         <Select
                             labelId="charWeapon"
@@ -158,7 +158,7 @@ export default function Characters() {
                         </Select>
                     </FormControl>
                     <Button id="filterButton" variant="contained" sx={{ backgroundColor: "#ffc000" }} onClick={filterCharacterList} disabled={isDisabled}> Filter </Button>
-                    <Button id="resetButton" variant="contained" sx={{ backgroundColor: "#ffc000" }} onClick={resetFilter} disabled={!isDisabled}> Reset </Button>
+                    <Button id="resetButton" variant="contained" sx={{ backgroundColor: "#ffc000", mr: 2 }} onClick={resetFilter} disabled={!isDisabled}> Reset </Button>
                 </Stack>
             </div>
             <Grid
