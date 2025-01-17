@@ -7,7 +7,7 @@ export default function NotFound() {
 
     useEffect(() => {
         document.title = "Page Not Found | GenshinDex"
-    })
+    }, [])
 
     return (
         <div>
