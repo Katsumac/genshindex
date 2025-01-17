@@ -18,11 +18,13 @@ export default function CharacterCard({ characterName }) {
   const [characterIcon, setCharacterIcon] = useState("");
 
   useEffect(() => {
+    // Fetch information regarding the character
     fetch(`https://genshin.jmp.blue/characters/${characterName}`)
       .then(response => response.json())
       .then(data => setCharacterData(data))
       .catch(e => `Error: ${e}`);
 
+    // Fetch the image of the character
     fetch(`https://genshin.jmp.blue/characters/${characterName}/icon-big`)
       .then(response => response.blob())
       .then(blob => setCharacterIcon(URL.createObjectURL(blob)))

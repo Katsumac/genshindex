@@ -9,6 +9,7 @@ import Link from '@mui/material/Link';
 import '../style/Form.css'
 
 export default function RegistrationForm() {
+
     const [inputData, setInputData] = useState({
         registrationEmail: "",
         registrationPassword: "",
@@ -18,11 +19,8 @@ export default function RegistrationForm() {
 
     // Handle input changes for both email and password
     const handleInputChange = (e) => {
-        const fieldName = e.target.name;
-        const value = e.target.value;
-
         setInputData(currentData => {
-            currentData[fieldName] = value;
+            currentData[e.target.name] = e.target.value;
             return { ...currentData };
         })
     }

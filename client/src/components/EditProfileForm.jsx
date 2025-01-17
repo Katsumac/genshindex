@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import '../style/Form.css'
 
 export default function EditProfileForm() {
+    
     const [inputData, setInputData] = useState({
         editEmail: "",
         editUsername: ""
@@ -15,18 +16,15 @@ export default function EditProfileForm() {
 
     // Handle input changes for both email and password
     const handleInputChange = (e) => {
-        const fieldName = e.target.name;
-        const value = e.target.value;
-
         setInputData(currentData => {
-            currentData[fieldName] = value;
+            currentData[e.target.name] = e.target.value;
             return { ...currentData };
         })
     }
 
     return (
         <div>
-            <Card sx={{ maxWidth: 700 }} style={{ textAlign: "center", margin: "auto" }}>
+            <Card sx={{ minWidth: 400, mx: 2 }} style={{ textAlign: "center"}}>
                 <CardContent>
                     <Typography variant="h5" gutterBottom>Edit Profile</Typography>
                     <div id="editEmailInput">
@@ -34,6 +32,7 @@ export default function EditProfileForm() {
                             id="editEmail"
                             name="editEmail"
                             label="Email"
+                            value={inputData.editEmail}
                             variant="standard"
                             sx={{ minWidth: 300, maxWidth: 700, pb: 2 }}
                             onChange={handleInputChange} />
@@ -43,6 +42,7 @@ export default function EditProfileForm() {
                             id="editUsername"
                             name="editUsername"
                             label="Username"
+                            value={inputData.editUsername}
                             variant="standard"
                             sx={{ minWidth: 300, maxWidth: 700, pb: 5 }}
                             onChange={handleInputChange} />

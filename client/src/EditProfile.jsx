@@ -1,24 +1,21 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import EditProfileForm from "./components/EditProfileForm";
 import Typography from '@mui/material/Typography';
+import Stack from "@mui/material/Stack";
 
 export default function EditProfile() {
-        const [message, setMessage] = useState("");
     
-        useEffect(() => {
-            // fetch("http://localhost:8080/editprofile")
-            //     .then(response => response.json())
-            //     .then(data => setMessage(data.message))
-            //     .catch(e => `Error: ${e}`);
-            document.title = "Edit Profile | GenshinDex";
-        }, []);
-    
-        return (
-            <div>
-                <Typography variant="h2" gutterBottom> Edit Profile </Typography>
+    useEffect(() => {
+        document.title = "Edit Profile | GenshinDex";
+    }, []);
+
+    return (
+        <div>
+            <Typography variant="h3" component="h2" sx={{ mb: 6 }}>Edit Profile</Typography>
+            <Stack direction="row" justifyContent="center" >
                 <EditProfileForm />
-                {/* <h1>{ message }</h1> */}
-            </div>
-        )
+            </Stack>
+        </div>
+    )
 }

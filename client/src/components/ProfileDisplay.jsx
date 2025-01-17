@@ -6,8 +6,8 @@ import Button from '@mui/material/Button';
 export default function ProfileDisplay() {
     return (
         <div>
-            <Card sx={{ maxWidth: 700 }} style={{ textAlign: "center", margin: "auto"}}>
-                <CardContent style={{textAlign: "center"}}>
+            <Card sx={{ minWidth: 400, mx: 2 }} style={{ textAlign: "center"}}>
+                <CardContent>
                     <Typography variant="h4" sx={{mb: 2}}>Username</Typography>
                     <Typography variant="body2" sx={{mb: 2}}>Email</Typography>
                 </CardContent>

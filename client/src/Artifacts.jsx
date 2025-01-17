@@ -13,29 +13,33 @@ import SearchBar from './components/SearchBar';
 import "./style/Paragraph.css"
 
 export default function Artifacts() {
-
+    
     const [artifactList, setArtifactList] = useState([]);
     const [filterChoices, setFilterChoices] = useState({
         max_rarity: ""
     });
 
     const [toggle, setToggle] = useState(0);
+    // To enable/disable filter/reset buttons
     const [isDisabled, setIsDisabled] = useState(false);
 
     useEffect(() => {
+        // Fetch information regarding the artifact
         fetch("https://genshin.jmp.blue/artifacts")
             .then(response => response.json())
             .then(data => setArtifactList(data))
             .catch(e => `Error: ${e}`);
 
+        // Reset the filter choices
         setFilterChoices((currFilterChoices) => {
             currFilterChoices["max_rarity"] = "";
             return { ...currFilterChoices };
         });
 
         document.title = "Artifacts | Genshindex";
-    }, [toggle])
+    }, [toggle]) // Re-render when toggle changes
 
+    // Search for artifacts
     const searchArtifacts = (query) => {
         fetch("https://genshin.jmp.blue/artifacts")
             .then(response => response.json())
@@ -45,6 +49,7 @@ export default function Artifacts() {
             .catch(e => `Error: ${e}`);
     }
 
+    // Updates the filter choices
     const handleFilterChange = (evt) => {
         setFilterChoices((currFilterChoices) => {
             currFilterChoices[evt.target.name] = evt.target.value;
@@ -52,12 +57,15 @@ export default function Artifacts() {
         });
     }
 
+    // Filters artifactList based on filter choices 
     const filterArtifactList = () => {
         setIsDisabled(true);
         artifactList.map((artifact) => {
             fetch(`https://genshin.jmp.blue/artifacts/${artifact}`)
                 .then(response => response.json())
                 .then(data => {
+                    // Checks if the rarity of the artifact matches the max_rarity of the filter choices.
+                    // and if max_rarity has been changed from default. If both are no, then remove from artifactList
                     if (data.max_rarity !== filterChoices.max_rarity && filterChoices.max_rarity !== "") {
                         setArtifactList(currentArtifacts => {
                             return currentArtifacts.filter((a) => a !== artifact)
@@ -79,7 +87,7 @@ export default function Artifacts() {
     }
 
     return (
-        <>
+        <div>
             <Typography variant="h3" component="h2" sx={{ mb: 6 }}>Artifacts</Typography>
             <div className="searchBar">
                 <SearchBar runQuery={searchArtifacts} />
@@ -118,12 +126,13 @@ export default function Artifacts() {
                 justifyContent={"space-evenly"}
                 sx={{ my: 6 }}>
                 {artifactList.length !== 0 ? artifactList.map((artifact, i) => {
+                    // If there are artifacts in artifactList, display cards. If not, display a message.
                     return <Grid key={i} size={{ xs: 1, sm: 2, md: 3 }} display="flex" justifyContent={'center'}>
                         <ArtifactCard artifactName={artifact} key={artifact + "Card"} />
                     </Grid>
                 }) : <Typography variant="body2" component="h2" sx={{ mt: 3, mb: 6, maxWidth: 900 }}> No artifacts found. </Typography>
                 }
             </Grid>
-        </>
+        </div>
     )
 }

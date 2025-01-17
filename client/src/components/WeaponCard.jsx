@@ -12,50 +12,52 @@ import "../style/StarButton.css"
 
 import rarityColourSelector from '../js/rarityColourSelector';
 
-export default function WeaponCard({weaponName}) {
+export default function WeaponCard({ weaponName }) {
 
-    const [weaponData, setWeaponData] = useState("");
-    const [weaponIcon, setWeaponIcon] = useState("");
+  const [weaponData, setWeaponData] = useState("");
+  const [weaponIcon, setWeaponIcon] = useState("");
 
-    useEffect(() => {
-        fetch(`https://genshin.jmp.blue/weapons/${weaponName}`)
-        .then(response => response.json())
-        .then(data => setWeaponData(data))
-        .catch(e => `Error: ${e}`);
+  useEffect(() => {
+    // Fetch information regarding the weapon
+    fetch(`https://genshin.jmp.blue/weapons/${weaponName}`)
+      .then(response => response.json())
+      .then(data => setWeaponData(data))
+      .catch(e => `Error: ${e}`);
 
-        fetch(`https://genshin.jmp.blue/weapons/${weaponName}/icon`)
-        .then(response => response.blob())
-        .then(blob => setWeaponIcon(URL.createObjectURL(blob)))
-        .catch(e => `Error: ${e}`);
+    // Fetch the image of the weapon
+    fetch(`https://genshin.jmp.blue/weapons/${weaponName}/icon`)
+      .then(response => response.blob())
+      .then(blob => setWeaponIcon(URL.createObjectURL(blob)))
+      .catch(e => `Error: ${e}`);
 
-    }, []);
+  }, []);
 
-        return (
-        <Card sx={{ maxWidth: 250, m: 1 }} className="box">
-          <a href={`./weapons/${weaponName}`} className="cardLink box">
-          <CardMedia
-            component="img"
-            alt={weaponData.name}
-            height="250"
-            image={weaponIcon}
-            sx={{bgcolor: rarityColourSelector(weaponData.rarity)}}
-          />
-          </a>
-          <CardContent>
-            <Stack direction="row" justifyContent="space-between">
-              <Typography gutterBottom variant="h6" component="div">
-                {weaponData.name}
-              </Typography>
-              <StarButton />
-            </Stack>
-            <RarityStars rarity={weaponData.rarity} entityName={weaponData.name} />
-            <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
-                {weaponData.type}
-            </Typography>
-            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                {weaponData.subStat}
-            </Typography>
-          </CardContent>
-        </Card>
-      );
-    }
+  return (
+    <Card sx={{ maxWidth: 250, m: 1 }} className="box">
+      <a href={`./weapons/${weaponName}`} className="cardLink box">
+        <CardMedia
+          component="img"
+          alt={weaponData.name}
+          height="250"
+          image={weaponIcon}
+          sx={{ bgcolor: rarityColourSelector(weaponData.rarity) }}
+        />
+      </a>
+      <CardContent>
+        <Stack direction="row" justifyContent="space-between">
+          <Typography gutterBottom variant="h6" component="div">
+            {weaponData.name}
+          </Typography>
+          <StarButton />
+        </Stack>
+        <RarityStars rarity={weaponData.rarity} entityName={weaponData.name} />
+        <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
+          {weaponData.type}
+        </Typography>
+        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+          {weaponData.subStat}
+        </Typography>
+      </CardContent>
+    </Card>
+  );
+}

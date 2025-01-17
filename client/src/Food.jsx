@@ -22,14 +22,17 @@ export default function Food() {
     });
 
     const [toggle, setToggle] = useState(0);
+    // To enable/disable filter/reset buttons
     const [isDisabled, setIsDisabled] = useState(false);
 
     useEffect(() => {
+        // Fetch information regarding the food (returns object, not array)
         fetch("https://genshin.jmp.blue/consumables/food")
             .then(response => response.json())
             .then(data => setFoodList(data))
             .catch(e => console.log(`Error: ${e}`));
 
+        // Reset the filter choices
         setFilterChoices((currFilterChoices) => {
             currFilterChoices["rarity"] = "";
             currFilterChoices["type"] = "";
@@ -37,14 +40,20 @@ export default function Food() {
         });
 
         document.title = "Food | GenshinDex"
-    }, [toggle])
+    }, [toggle]) // Re-render when toggle changes
 
+    // Search for food
     const searchFood = (query) => {
         fetch("https://genshin.jmp.blue/consumables/food")
             .then(response => response.json())
             .then(data => {
                 for (const key in data) {
-                    if (!key.includes(query)) {
+                    if (key === "id") {
+                        const easterEggName = "paimon";
+                        if (!easterEggName.includes(query)) {
+                            delete data[key];
+                        }
+                    } else if (!key.includes(query)) {
                         delete data[key];
                     }
                 }
@@ -53,6 +62,7 @@ export default function Food() {
             .catch(e => `Error: ${e}`);
     }
 
+    // Updates the filter choices
     const handleFilterChange = (evt) => {
         setFilterChoices((currFilterChoices) => {
             currFilterChoices[evt.target.name] = evt.target.value;
@@ -60,16 +70,24 @@ export default function Food() {
         });
     }
 
+    // Filters foodList based on filter choices 
     const filterFoodList = () => {
         setIsDisabled(true);
         const newArr = {...foodList};
         Object.keys(foodList).map((food) => {
-            if (filterChoices.rarity === 6 || filterChoices.type === "Emergency Food") {
+            // Filters for the Easter egg. Deletes all foods except for "id", which is used to render the Easter egg
+            if ((filterChoices.rarity === 6 && filterChoices.type === "Emergency Food") ||
+                (filterChoices.rarity === 6 && filterChoices.type === "") ||
+                (filterChoices.rarity === "" && filterChoices.type === "Emergency Food")) {
                 Object.keys(newArr).forEach((food) => {
                     if (food !== "id") delete newArr[food];
                 })
                 return setFoodList({ ...newArr });
             }
+
+            // Checks if a property of the food matches the corresponding filter choice.
+            // and if the filter choice has been changed from default. If both are no, then remove from foodList
+
             if (foodList[food].rarity !== filterChoices.rarity && filterChoices.rarity !== "") {
                 delete newArr[food];
                 return setFoodList({ ...newArr });
@@ -93,7 +111,7 @@ export default function Food() {
     }
 
     return (
-        <>
+        <div>
             <Typography variant="h3" component="h2" sx={{ mb: 6 }}>Food</Typography>
             <div className="searchBar">
                 <SearchBar runQuery={searchFood} />
@@ -130,7 +148,7 @@ export default function Food() {
                         <Select
                             labelId="foodType"
                             id="foodType"
-                            value={filterChoices.vision}
+                            value={filterChoices.type}
                             label="Type"
                             name="type"
                             onChange={handleFilterChange}
@@ -154,15 +172,15 @@ export default function Food() {
                 justifyContent={"space-evenly"}
                 sx={{ my: 6 }}>
                 {(Object.keys(foodList).length) !== 0 ? Object.keys(foodList).map((food, i) => {
-                    if (food === "id") return <EasterEggCard />
+                    if (food === "id") return <EasterEggCard key="paimonEasterEgg"/>
+                    // If there are food in foodList, display cards. If not, display a message.                    
                     return <Grid key={i} size={{ xs: 1, sm: 2, md: 3 }} display="flex" justifyContent={'center'}>
                         <FoodCard foodName={food} />
                     </Grid>
                 }) : <Typography variant="body2" component="h2" sx={{ mt: 3, mb: 6, maxWidth: 900 }}> No food found. </Typography>
                 }
-
             </Grid>
-        </>
+        </div>
     )
 
 }

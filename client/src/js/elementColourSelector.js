@@ -1,3 +1,4 @@
+// Determines background colour to use for the character card, based on the character's element
 export default function elementColorSelector(element) {
     switch (element) {
         case "Anemo":

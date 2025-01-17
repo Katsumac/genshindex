@@ -23,6 +23,7 @@ export default function PreviewRow({title, destination, dataList}) {
                 justifyContent={"space-evenly"}
                 sx={{mb: 12}}>
                     {dataList.map((data, i) => {
+                        // Depending on which data is used, render a different card
                         return <Grid key={i} size={{xs: 1, sm: 2, md: 3}} display="flex" justifyContent={'center'}>
                                     {title === "Characters" && <CharacterCard characterName={data} key={data + "Card"}/>}
                                     {title === "Weapons" && <WeaponCard weaponName={data} key={data + "Card"}/>}
