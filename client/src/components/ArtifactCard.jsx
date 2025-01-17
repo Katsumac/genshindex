@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import Stack from '@mui/material/Stack';
-import RarityStars from './RarityStars';
-import StarButton from './StarButton';
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
+import RarityStars from "./RarityStars";
+import StarButton from "./StarButton";
 import artifactPieceSelector from "../js/artifactPieceSelector";
-import rarityColourSelector from '../js/rarityColourSelector';
+import rarityColourSelector from "../js/rarityColourSelector";
 import "../style/Card.css"
 import "../style/StarButton.css"
 
@@ -18,11 +18,13 @@ export default function ArtifactCard({ artifactName }) {
   const [artifactIcon, setArtifactIcon] = useState("");
 
   useEffect(() => {
+    // Fetch information regarding the artifact
     fetch(`https://genshin.jmp.blue/artifacts/${artifactName}`)
       .then(response => response.json())
       .then(data => setArtifactData(data))
       .catch(e => `Error: ${e}`);
 
+    // Fetch the image of the artifact. Depending on the artifact, it may use the Flower of Life or Circlet of Logos image
     fetch(`https://genshin.jmp.blue/artifacts/${artifactName}/${artifactPieceSelector(artifactName)}`)
       .then(response => response.blob())
       .then(blob => setArtifactIcon(URL.createObjectURL(blob)))

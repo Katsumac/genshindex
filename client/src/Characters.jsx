@@ -22,14 +22,17 @@ export default function Characters() {
     });
 
     const [toggle, setToggle] = useState(0);
+    // To enable/disable filter/reset buttons
     const [isDisabled, setIsDisabled] = useState(false);
 
     useEffect(() => {
+        // Fetch information regarding the character
         fetch("https://genshin.jmp.blue/characters")
             .then(response => response.json())
             .then(data => setCharacterList(data))
             .catch(e => `Error: ${e}`);
 
+        // Reset the filter choices
         setFilterChoices((currFilterChoices) => {
             currFilterChoices["rarity"] = "";
             currFilterChoices["vision"] = "";
@@ -38,8 +41,9 @@ export default function Characters() {
         });
 
         document.title = "Characters | Genshindex";
-    }, [toggle])
+    }, [toggle]) // Re-render when toggle changes
 
+    // Search for characters
     const searchCharacters = (query) => {
         fetch("https://genshin.jmp.blue/characters")
             .then(response => response.json())
@@ -49,6 +53,7 @@ export default function Characters() {
             .catch(e => `Error: ${e}`);
     }
 
+    // Updates the filter choices
     const handleFilterChange = (evt) => {
         setFilterChoices((currFilterChoices) => {
             currFilterChoices[evt.target.name] = evt.target.value;
@@ -56,12 +61,16 @@ export default function Characters() {
         });
     }
 
+    // Filters the characterList based on filter choices 
     const filterCharacterList = () => {
         setIsDisabled(true);
         characterList.map((character) => {
             fetch(`https://genshin.jmp.blue/characters/${character}`)
                 .then(response => response.json())
                 .then(data => {
+                    // Checks if a property of the character matches the corresponding filter choice.
+                    // and if the filter choice has been changed from default. If both are no, then remove from characterList
+
                     if (data.rarity !== filterChoices.rarity && filterChoices.rarity !== "") {
                         setCharacterList(currentCharacters => {
                             return currentCharacters.filter((c) => c !== character)
@@ -169,6 +178,7 @@ export default function Characters() {
                 justifyContent={"space-evenly"}
                 sx={{ my: 6 }}>
                 {characterList.length !== 0 ? characterList.map((character, i) => {
+                    // If there are characters in characterList, display cards. If not, display a message.
                     return <Grid key={i} size={{ xs: 1, sm: 2, md: 3 }} display="flex" justifyContent={'center'}>
                         <CharacterCard characterName={character} key={character + "Card"} />
                     </Grid>

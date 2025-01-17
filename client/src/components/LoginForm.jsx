@@ -18,11 +18,8 @@ export default function LoginForm() {
 
     // Handle input changes for both email and password
     const handleInputChange = (e) => {
-        const fieldName = e.target.name;
-        const value = e.target.value;
-
         setInputData(currentData => {
-            currentData[fieldName] = value;
+            currentData[e.target.name] = e.target.value;
             return { ...currentData };
         })
     }

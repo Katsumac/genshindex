@@ -8,7 +8,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
 export default function AbilityTable({ abilityData, secondColName }) {
-
+  // Styling from Material UI
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: "#224488",
@@ -19,6 +19,7 @@ export default function AbilityTable({ abilityData, secondColName }) {
   },
 }));
 
+// Styling from Material UI
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(odd)': {
     backgroundColor: theme.palette.action.hover,

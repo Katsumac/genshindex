@@ -22,14 +22,17 @@ export default function Weapons() {
     });
 
     const [toggle, setToggle] = useState(0);
+    // To enable/disable filter/reset buttons
     const [isDisabled, setIsDisabled] = useState(false);
 
     useEffect(() => {
+        // Fetch information regarding the character
         fetch("https://genshin.jmp.blue/weapons")
             .then(response => response.json())
             .then(data => setWeaponList(data))
             .catch(e => `Error: ${e}`);
 
+        // Reset the filter choices
         setFilterChoices((currFilterChoices) => {
             currFilterChoices["rarity"] = "";
             currFilterChoices["type"] = "";
@@ -39,8 +42,9 @@ export default function Weapons() {
 
         document.title = "Weapons | GenshinDex";
 
-    }, [toggle])
+    }, [toggle]) // Re-render when toggle changes
 
+    // Search for weapons
     const searchWeapons = (query) => {
         fetch("https://genshin.jmp.blue/weapons")
             .then(response => response.json())
@@ -50,6 +54,7 @@ export default function Weapons() {
             .catch(e => `Error: ${e}`);
     }
 
+    // Updates the filter choices
     const handleFilterChange = (evt) => {
         setFilterChoices((currFilterChoices) => {
             currFilterChoices[evt.target.name] = evt.target.value;
@@ -57,12 +62,16 @@ export default function Weapons() {
         });
     }
 
+    // Filters the weaponList based on filter choices 
     const filterWeaponList = () => {
         setIsDisabled(true);
         weaponList.map((weapon) => {
             fetch(`https://genshin.jmp.blue/weapons/${weapon}`)
                 .then(response => response.json())
                 .then(data => {
+                    // Checks if a property of the weapon matches the corresponding filter choice.
+                    // and if the filter choice has been changed from default. If both are no, then remove from weaponList
+
                     if (data.rarity !== filterChoices.rarity && filterChoices.rarity !== "") {
                         setWeaponList(currentWeapons => {
                             return currentWeapons.filter((w) => w !== weapon)
@@ -177,6 +186,7 @@ export default function Weapons() {
                 justifyContent={"space-evenly"}
                 sx={{ my: 6 }}>
                 {weaponList.length !== 0 ? weaponList.map((weapon, i) => {
+                    // If there are characters in weaponList, display cards. If not, display a message.
                     return <Grid key={i} size={{ xs: 1, sm: 2, md: 3 }} display="flex" justifyContent={'center'}>
                         <WeaponCard weaponName={weapon} key={weapon + "Card"} />
                     </Grid>

@@ -12,6 +12,7 @@ export default function SearchBar({ runQuery }) {
         setSearchQuery(evt.target.value);
     }
 
+    // Checks if the "Enter" button is pressed when using the input. Clicks the search button.
     const isEnterEvent = (evt) => {
         if (evt.key === "Enter") {
             document.getElementById("searchButton").click();

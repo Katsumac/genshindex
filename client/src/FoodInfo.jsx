@@ -11,9 +11,11 @@ export default function FoodInfo() {
 
     const [foodData, setFoodData] = useState("");
     const [foodIcon, setFoodIcon] = useState("");
+    // Gets the food name via the "name" param
     const foodName = useParams().name;
 
     useEffect(() => {
+        // Fetch information regarding the food (returns object, not array)
         fetch(`https://genshin.jmp.blue/consumables/food`)
             .then(response => response.json())
             .then(data => {
@@ -22,12 +24,14 @@ export default function FoodInfo() {
             })
             .catch(e => `Error: ${e}`);
 
+        // Fetch the image of the food
         fetch(`https://genshin.jmp.blue/consumables/food/${foodName}`)
             .then(response => response.blob())
             .then(blob => setFoodIcon(URL.createObjectURL(blob)))
             .catch(e => `Error: ${e}`);
     }, []);
 
+    // Data to be passed to the summary table
     const summaryData = [
         { category: "Rarity", description: <RarityStars rarity={foodData && foodData[foodName].rarity} entityName={foodData && foodData[foodName].name} /> },
         { category: "Type", description: foodData && foodData[foodName].type },

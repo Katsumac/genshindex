@@ -12,9 +12,11 @@ export default function CharacterInfo() {
 
     const [characterData, setCharacterData] = useState("");
     const [characterIcon, setCharacterIcon] = useState("");
+    // Gets the character name via the "name" param
     const characterName = useParams().name;
 
     useEffect(() => {
+        // Fetch information regarding the character
         fetch(`https://genshin.jmp.blue/characters/${characterName}`)
             .then(response => response.json())
             .then(data => {
@@ -23,12 +25,14 @@ export default function CharacterInfo() {
             })
             .catch(e => `Error: ${e}`);
 
+        // Fetch the image of the character
         fetch(`https://genshin.jmp.blue/characters/${characterName}/icon-big`)
             .then(response => response.blob())
             .then(blob => setCharacterIcon(URL.createObjectURL(blob)))
             .catch(e => `Error: ${e}`);
     }, []);
-
+    
+    // Data to be passed to the summary table
     const summaryData = [
         { category: "Rarity", description: <RarityStars rarity={characterData.rarity} entityName={characterData.name} /> },
         { category: "Vision", description: characterData.vision },

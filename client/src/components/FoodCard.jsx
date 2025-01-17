@@ -17,18 +17,20 @@ export default function FoodCard({ foodName }) {
   const [foodIcon, setFoodIcon] = useState("");
 
   useEffect(() => {
+    // Fetch information regarding the food
     fetch(`https://genshin.jmp.blue/consumables/food`)
       .then(response => response.json())
       .then(data => setFoodData(data))
       .catch(e => `Error: ${e}`);
 
+      // Fetch the image of the food
     fetch(`https://genshin.jmp.blue/consumables/food/${foodName}`)
       .then(response => response.blob())
       .then(blob => setFoodIcon(URL.createObjectURL(blob)))
       .catch(e => console.log(`Error: ${e}`));
 
 
-  }, [foodName]);
+  }, [foodName]); // Re-render when foodName changes (this is specifically for the filter function on the Food page)
 
   return (
     <Card sx={{ maxWidth: 250, m: 1 }} className="box">

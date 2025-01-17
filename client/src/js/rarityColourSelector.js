@@ -1,3 +1,4 @@
+// Determines background colour to use for the artifact/food/weapon card, based on the artifact's/food's/weapon's rarity
 export default function rarityColorSelector(rarity) {
     switch (rarity) {
         case 1:

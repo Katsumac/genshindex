@@ -12,9 +12,11 @@ export default function ArtifactInfo() {
 
     const [artifactData, setArtifactData] = useState("");
     const [artifactIcon, setArtifactIcon] = useState("");
+    // Gets the artifact name via the "name" param
     const artifactName = useParams().name;
 
     useEffect(() => {
+        // Fetch information regarding the artifact
         fetch(`https://genshin.jmp.blue/artifacts/${artifactName}`)
             .then(response => response.json())
             .then(data => {
@@ -23,12 +25,14 @@ export default function ArtifactInfo() {
             })
             .catch(e => `Error: ${e}`);
 
+        // Fetch the image of the artifact. Depending on the artifact, it may use the Flower of Life or Circlet of Logos image
         fetch(`https://genshin.jmp.blue/artifacts/${artifactName}/${artifactPieceSelector(artifactName)}`)
             .then(response => response.blob())
             .then(blob => setArtifactIcon(URL.createObjectURL(blob)))
             .catch(e => `Error: ${e}`);
     }, []);
 
+    // Data to be passed to the summary table
     const summaryData = [
         { category: "Max Rarity", description: <RarityStars rarity={artifactData.max_rarity} entityName={artifactData.name} /> },
         { category: "1-Piece Bonus", description: artifactData["1-piece_bonus"] ? artifactData["1-piece_bonus"] : "-" },

@@ -11,21 +11,25 @@ export default function Home() {
     const [foodList, setFoodList] = useState([]);
 
     useEffect(() => {
+        // Fetch information regarding the first 4 characters
         fetch("https://genshin.jmp.blue/characters")
         .then(response => response.json())
         .then(data => setCharacterList(data.slice(0, 4)))
         .catch(e => console.log(`Error: ${e}`));
 
+        // Fetch information regarding the first 4 weapons
         fetch("https://genshin.jmp.blue/weapons")
         .then(response => response.json())
         .then(data => setWeaponList(data.slice(0, 4)))
         .catch(e => console.log(`Error: ${e}`));
 
+        // Fetch information regarding the first 4 artifacts
         fetch("https://genshin.jmp.blue/artifacts")
         .then(response => response.json())
         .then(data => setArtifactList(data.slice(0, 4)))
         .catch(e => console.log(`Error: ${e}`));
 
+        // Fetch information regarding the first 4 foods
         fetch("https://genshin.jmp.blue/consumables/food")
         .then(response => response.json())
         .then(data => setFoodList(Object.entries(data).slice(0, 4)))

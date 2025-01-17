@@ -18,11 +18,13 @@ export default function WeaponCard({ weaponName }) {
   const [weaponIcon, setWeaponIcon] = useState("");
 
   useEffect(() => {
+    // Fetch information regarding the weapon
     fetch(`https://genshin.jmp.blue/weapons/${weaponName}`)
       .then(response => response.json())
       .then(data => setWeaponData(data))
       .catch(e => `Error: ${e}`);
 
+    // Fetch the image of the weapon
     fetch(`https://genshin.jmp.blue/weapons/${weaponName}/icon`)
       .then(response => response.blob())
       .then(blob => setWeaponIcon(URL.createObjectURL(blob)))
