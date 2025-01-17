@@ -156,7 +156,7 @@ export default function Food() {
                 justifyContent={"space-evenly"}
                 sx={{ my: 6 }}>
                 {(Object.keys(foodList).length) !== 0 ? Object.keys(foodList).map((food, i) => {
-                    if (food === "id") return <EasterEggCard />
+                    if (food === "id") return <EasterEggCard key="paimonEasterEgg"/>
                     return <Grid key={i} size={{ xs: 1, sm: 2, md: 3 }} display="flex" justifyContent={'center'}>
                         <FoodCard foodName={food} />
                     </Grid>
