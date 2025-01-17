@@ -40,7 +40,7 @@ export default function Characters() {
             return { ...currFilterChoices };
         });
 
-        document.title = "Characters | Genshindex";
+        document.title = "Characters | GenshinDex";
     }, [toggle]) // Re-render when toggle changes
 
     // Search for characters

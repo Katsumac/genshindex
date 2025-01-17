@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 export default function Registration() {
 
     useEffect(() => {
-        document.title = "Registration | Genshindex";
+        document.title = "Registration | GenshinDex";
     }, []);
 
     return (

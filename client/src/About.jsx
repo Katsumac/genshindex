@@ -1,8 +1,15 @@
+import { useEffect } from "react";
+
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import "./style/Paragraph.css"
 
 export default function About() {
+
+    useEffect(() => {
+        document.title = "About | GenshinDex"
+    })
+
     return (
         <div>
             <Typography variant="h3" component="h2" sx={{mb: 6}}>About GenshinDex</Typography>

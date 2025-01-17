@@ -1,7 +1,14 @@
+import { useEffect } from 'react';
+
 import Typography from '@mui/material/Typography';
 import "./style/NotFound.css"
 
 export default function NotFound() {
+
+    useEffect(() => {
+        document.title = "Page Not Found | GenshinDex"
+    })
+
     return (
         <div>
             <Typography variant="h3" component="h2" sx={{mb: 6}}>Uh oh! Paimon couldn't find the page!</Typography>

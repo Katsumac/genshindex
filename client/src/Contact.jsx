@@ -1,8 +1,15 @@
+import { useEffect } from "react";
+
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack"
 import "./style/Contact.css"
 
 export default function Contact() {
+
+    useEffect(() => {
+        document.title = "Contact | GenshinDex"
+    })
+
     return (
         <div>
             <Typography variant="h3" component="h2" sx={{mb: 6}}>Contact</Typography>
