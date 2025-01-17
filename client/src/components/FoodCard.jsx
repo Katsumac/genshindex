@@ -9,7 +9,6 @@ import RarityStars from './RarityStars';
 import StarButton from './StarButton';
 import "../style/Card.css"
 import "../style/StarButton.css"
-
 import rarityColourSelector from '../js/rarityColourSelector';
 
 export default function FoodCard({ foodName }) {

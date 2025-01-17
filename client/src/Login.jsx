@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import "./style/Login.css"
 
 export default function Login() {
+    
     useEffect(() => {
             document.title = "Login | GenshinDex";
     }, []);

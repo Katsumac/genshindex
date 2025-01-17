@@ -12,8 +12,8 @@ export default function StarButton() {
     }
 
     return (
-        <>
-        {isFilled ? <StarIcon className="star" fontSize="large" onClick={handleClick} /> : <StarOutlineIcon className="star" fontSize="large" onClick={handleClick} sx={{mx: "auto"}} />}
-        </>
+        <div>
+            {isFilled ? <StarIcon className="star" fontSize="large" onClick={handleClick} /> : <StarOutlineIcon className="star" fontSize="large" onClick={handleClick} sx={{mx: "auto"}} />}
+        </div>
     )
 }

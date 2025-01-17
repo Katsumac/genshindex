@@ -93,7 +93,7 @@ export default function Characters() {
     }
 
     return (
-        <>
+        <div>
             <Typography variant="h3" component="h2" sx={{ mb: 6 }}>Characters</Typography>
             <div className="searchBar">
                 <SearchBar runQuery={searchCharacters} />
@@ -175,6 +175,6 @@ export default function Characters() {
                 }) : <Typography variant="body2" component="h2" sx={{ mt: 3, mb: 6, maxWidth: 900 }}> No characters found. </Typography>
                 }
             </Grid>
-        </>
+        </div>
     )
 }

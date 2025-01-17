@@ -10,6 +10,7 @@ import "../style/Form.css"
 
 
 export default function LoginForm() {
+    
     const [inputData, setInputData] = useState({
         loginEmail: "",
         loginPassword: ""

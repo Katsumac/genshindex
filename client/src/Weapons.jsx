@@ -95,7 +95,7 @@ export default function Weapons() {
     }
 
     return (
-        <>
+        <div>
             <Typography variant="h3" component="h2" sx={{ mb: 6 }}>Weapons</Typography>
             <div className="searchBar">
                 <SearchBar runQuery={searchWeapons} />
@@ -183,6 +183,6 @@ export default function Weapons() {
                 }) : <Typography variant="body2" component="h2" sx={{ mt: 3, mb: 6, maxWidth: 900 }}> No weapons found. </Typography>
                 }
             </Grid>
-        </>
+        </div>
     )
 }

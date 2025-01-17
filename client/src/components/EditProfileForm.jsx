@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import '../style/Form.css'
 
 export default function EditProfileForm() {
+    
     const [inputData, setInputData] = useState({
         editEmail: "",
         editUsername: ""

@@ -44,7 +44,12 @@ export default function Food() {
             .then(response => response.json())
             .then(data => {
                 for (const key in data) {
-                    if (!key.includes(query)) {
+                    if (key === "id") {
+                        const easterEggName = "paimon";
+                        if (!easterEggName.includes(query)) {
+                            delete data[key];
+                        }
+                    } else if (!key.includes(query)) {
                         delete data[key];
                     }
                 }
@@ -95,7 +100,7 @@ export default function Food() {
     }
 
     return (
-        <>
+        <div>
             <Typography variant="h3" component="h2" sx={{ mb: 6 }}>Food</Typography>
             <div className="searchBar">
                 <SearchBar runQuery={searchFood} />
@@ -164,7 +169,7 @@ export default function Food() {
                 }
 
             </Grid>
-        </>
+        </div>
     )
 
 }

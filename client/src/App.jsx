@@ -24,7 +24,7 @@ import NotFound from './NotFound';
 
 function App() {
   return (
-    <>
+    <div>
       <Navbar />
       <BrowserRouter>
         <Routes>
@@ -48,7 +48,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       <Footer />
-    </>
+    </div>
   )
 }
 

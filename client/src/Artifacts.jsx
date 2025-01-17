@@ -13,7 +13,7 @@ import SearchBar from './components/SearchBar';
 import "./style/Paragraph.css"
 
 export default function Artifacts() {
-
+    
     const [artifactList, setArtifactList] = useState([]);
     const [filterChoices, setFilterChoices] = useState({
         max_rarity: ""

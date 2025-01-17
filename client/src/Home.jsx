@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import PreviewRow from "./components/PreviewRow";
 
 export default function Home() {
+    
     const [characterList, setCharacterList] = useState([]);
     const [weaponList, setWeaponList] = useState([]);
     const [artifactList, setArtifactList] = useState([]);
