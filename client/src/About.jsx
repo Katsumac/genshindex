@@ -33,7 +33,7 @@ export default function About() {
                     The easter egg card image belongs to Hoyoverse, and screenshotted by user Felix_o0u on the <Link href="https://www.hoyolab.com/article/30095421" underline="none">Hoyolab site. </Link>
                     The easter egg info image belongs to Hoyoverse, and screenshotted by a deleted user on <Link href="https://www.reddit.com/r/Genshin_Impact/comments/j32so2/paimon_will_always_be_emergency_food_until_the/" underline="none">Reddit. </Link>
                     The surprised Paimon image &#40;now where is it? :&#41;&#41;, found on the <Link href="https://genshin-impact.fandom.com/wiki/Chat/Gallery?file=Icon_Emoji_Paimon%27s_Paintings_01_Paimon_5.png" underline="none">Genshin Impact Fandom Wiki, </Link> belongs to Hoyoverse.
-                    The data used is from the api established by <Link href="https://github.com/genshindev/api?tab=readme-ov-file" underline="none">genshindev. </Link>
+                    The data used is from the api established by <Link href="https://github.com/genshindev/api" underline="none">genshindev. </Link>
                     Please note that not all information may be up to date.
                 </Typography>
             </div>
