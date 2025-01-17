@@ -23,7 +23,7 @@ export default function EditProfileForm() {
 
     return (
         <div>
-            <Card sx={{ maxWidth: 700 }} style={{ textAlign: "center", margin: "auto" }}>
+            <Card sx={{ minWidth: 400, mx: 2 }} style={{ textAlign: "center"}}>
                 <CardContent>
                     <Typography variant="h5" gutterBottom>Edit Profile</Typography>
                     <div id="editEmailInput">
