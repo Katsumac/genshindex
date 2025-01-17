@@ -7,7 +7,7 @@ export default function EasterEggInfo() {
 
     useEffect(() => {
         document.title = "Paimon | GenshinDex"
-    })
+    }, [])
 
     return(
         <div>

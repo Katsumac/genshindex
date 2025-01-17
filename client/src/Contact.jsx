@@ -8,7 +8,7 @@ export default function Contact() {
 
     useEffect(() => {
         document.title = "Contact | GenshinDex"
-    })
+    }, [])
 
     return (
         <div>

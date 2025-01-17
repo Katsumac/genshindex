@@ -8,7 +8,7 @@ export default function About() {
 
     useEffect(() => {
         document.title = "About | GenshinDex"
-    })
+    }, [])
 
     return (
         <div>
