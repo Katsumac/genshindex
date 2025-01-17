@@ -8,7 +8,7 @@ This is a personal project to practice using the basics of ReactJS and Node.js t
 
 
 ## Acknowledgements
-I would like to acknowledge that Genshin Impact is the intellectual property of Hoyoverse, not mine. Listed below are the sources of data and images used in this project.
+I would like to acknowledge that [Genshin Impact](https://genshin.hoyoverse.com/en/) is the intellectual property of Hoyoverse, not mine. Listed below are the sources of data and images used in this project.
 
 The email, web, LinkedIn, and Github images are found on Flaticon.
 
