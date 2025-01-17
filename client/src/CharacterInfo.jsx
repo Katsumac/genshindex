@@ -57,13 +57,13 @@ export default function CharacterInfo() {
                 <SummaryTable summaryData={summaryData}/>
                 
                 <Typography variant ="h4" component="h2" sx={{mt: 3, mb: 1}}>Skills</Typography>
-                {characterData && <AbilityTable abilityData={characterData.skillTalents}/>}
+                {characterData && <AbilityTable abilityData={characterData.skillTalents} secondColName="Type"/>}
 
                 <Typography variant ="h4" component="h2" sx={{mt: 3, mb: 1}}>Passive Talents</Typography>
-                {characterData && <AbilityTable abilityData={characterData.passiveTalents}/>}
+                {characterData && <AbilityTable abilityData={characterData.passiveTalents} secondColName="Requirement"/>}
                     
                 <Typography variant ="h4" component="h2" sx={{mt: 3, mb: 1}}>Constellations</Typography>
-                {characterData && <AbilityTable abilityData={characterData.constellations}/>}
+                {characterData && <AbilityTable abilityData={characterData.constellations} secondColName="Level"/>}
   
             </div>
         )

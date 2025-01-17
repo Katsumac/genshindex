@@ -7,7 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-export default function AbilityTable({ abilityData }) {
+export default function AbilityTable({ abilityData, secondColName }) {
 
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -35,7 +35,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
         <TableHead>
           <TableRow>
             <StyledTableCell>Name</StyledTableCell>
-            <StyledTableCell align="left">Type</StyledTableCell>
+            <StyledTableCell align="left">{secondColName}</StyledTableCell>
             <StyledTableCell align="left">Description</StyledTableCell>
           </TableRow>
         </TableHead>
@@ -45,7 +45,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
               <StyledTableCell component="th" scope="row" style={{whiteSpace:"pre-wrap"}}>
                 {ability.name}
               </StyledTableCell>
-              <StyledTableCell align="left" style={{whiteSpace:"pre-wrap"}}>{ability.unlock}</StyledTableCell>
+              <StyledTableCell align="left" style={{whiteSpace:"pre-wrap"}}>{ability.unlock.includes("Constellation") ? ability.unlock.substring(18) : ability.unlock}</StyledTableCell>
               <StyledTableCell align="left" style={{whiteSpace:"pre-wrap"}}>{ability.description.replace(/\n/g, "\n\n").replace(/\n\n\n\n/g, "\n")}</StyledTableCell>
             </StyledTableRow>
           ))}
