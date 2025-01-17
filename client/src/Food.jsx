@@ -64,7 +64,9 @@ export default function Food() {
         setIsDisabled(true);
         const newArr = {...foodList};
         Object.keys(foodList).map((food) => {
-            if (filterChoices.rarity === 6 || filterChoices.type === "Emergency Food") {
+            if ((filterChoices.rarity === 6 && filterChoices.type === "Emergency Food") ||
+                (filterChoices.rarity === 6 && filterChoices.type === "") ||
+                (filterChoices.rarity === "" && filterChoices.type === "Emergency Food")) {
                 Object.keys(newArr).forEach((food) => {
                     if (food !== "id") delete newArr[food];
                 })
@@ -130,7 +132,7 @@ export default function Food() {
                         <Select
                             labelId="foodType"
                             id="foodType"
-                            value={filterChoices.vision}
+                            value={filterChoices.type}
                             label="Type"
                             name="type"
                             onChange={handleFilterChange}
