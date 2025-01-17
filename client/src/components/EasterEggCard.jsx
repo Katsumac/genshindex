@@ -14,7 +14,7 @@ export default function EasterEggCard() {
           component="img"
           alt="Paimon"
           height="250"
-          image="../src/img/emergencyfood.jpg"
+          image="/emergencyfood.jpg"
         />
       </a>
       <CardContent>

@@ -32,7 +32,7 @@ export default function Navbar() {
 
           {/* For smaller screens */}
           {/* Logo */}
-          <a href="/"><img src={"/src/img/paimonSmile.png"} id="paimonNavImg" /></a>
+          <a href="/"><img src={"/paimonSmile.png"} id="paimonNavImg" /></a>
 
           {/* Title */}
           <Typography

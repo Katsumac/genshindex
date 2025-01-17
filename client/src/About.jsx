@@ -13,7 +13,7 @@ export default function About() {
     return (
         <div>
             <Typography variant="h3" component="h2" sx={{mb: 6}}>About GenshinDex</Typography>
-            <img src={"./src/img/paimonSmile.png"} id="paimonImg" />
+            <img src={"/paimonSmile.png"} id="paimonImg" />
             <div className="paragraph">
                 <Typography variant="body1" sx={{my: 6, maxWidth: 900}} >
                     Hello, and welcome to GenshinDex! Browse the characters, weapons, artifacts, and foods of Hoyoverse's hit open-world, anime-style game Genshin Impact!
