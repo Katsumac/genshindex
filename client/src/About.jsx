@@ -22,7 +22,7 @@ export default function About() {
             </div>
             <div className="paragraph">
                 <Typography variant="body1" sx={{mb: 6, maxWidth: 900}} >
-                    This is a personal project to practice using ReactJS and Node.js together. I would like to acknowledge that <Link href="https://genshin.hoyoverse.com/en/" underline="none">Genshin Impact </Link> is the intellectual property
+                    This is a personal project to practice using ReactJS and Node.js together. Currently working on the back-end. I would like to acknowledge that <Link href="https://genshin.hoyoverse.com/en/" underline="none">Genshin Impact </Link> is the intellectual property
                     of Hoyoverse, not mine.
                     The <Link href="https://www.flaticon.com/free-icon/email_3178158" underline="none">email, </Link>
                     <Link href="https://www.flaticon.com/free-icon/web_3178162" underline="none">web, </Link>
