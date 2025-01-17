@@ -35,7 +35,7 @@ export default function Home() {
 
     return (
         <div>
-            <Typography variant="h3" component="h2" sx={{mb: 3}}>Welcome to GenshinDex!</Typography>
+            <Typography variant="h3" component="h2" sx={{mb: 6}}>Welcome to GenshinDex!</Typography>
             <Typography variant="h5" component="h2" sx={{mb: 12}}>Enjoy browsing Genshin's characters, weapons, artifacts, and food~</Typography>
 
             <PreviewRow title="Characters" destination="/characters" dataList={characterList} />

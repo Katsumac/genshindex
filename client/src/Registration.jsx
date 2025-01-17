@@ -16,7 +16,7 @@ export default function Registration() {
     
         return (
             <div>
-                <Typography variant="h2" gutterBottom sx={{mt: 5}}> GenshinDex </Typography>
+                <Typography variant="h3" component="h2" sx={{ mb: 6 }}>GenshinDex</Typography>
                 <RegistrationForm />
                 {/* <h1>{ message }</h1> */}
             </div>

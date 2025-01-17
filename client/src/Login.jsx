@@ -11,7 +11,7 @@ export default function Login() {
 
     return (
         <div>
-            <Typography variant="h2" gutterBottom sx={{mt: 5}}> GenshinDex </Typography>
+            <Typography variant="h3" component="h2" sx={{mb: 6}}>GenshinDex</Typography>
             <img src={"./src/img/paimonSmile.png"} id="paimonImg" />
             <LoginForm />
         </div>
