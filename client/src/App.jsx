@@ -1,5 +1,3 @@
-import './style/App.css'
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from './components/Navbar';
@@ -21,6 +19,7 @@ import About from './About';
 import Contact from './Contact';
 import EasterEggInfo from './EasterEggInfo';
 import NotFound from './NotFound';
+import './style/App.css'
 
 function App() {
   return (
