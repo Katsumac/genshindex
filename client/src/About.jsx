@@ -27,7 +27,7 @@ export default function About() {
                     The <Link href="https://www.flaticon.com/free-icon/email_3178158" underline="none">email, </Link>
                     <Link href="https://www.flaticon.com/free-icon/web_3178162" underline="none">web, </Link>
                     <Link href="https://www.flaticon.com/free-icon/linkedin_1384014" underline="none">LinkedIn, </Link>
-                    and <Link href="https://www.flaticon.com/free-icon/github_2111425" underline="none">Github </Link>
+                    and <Link href="https://www.flaticon.com/free-icon/github_2111425" underline="none">GitHub </Link>
                     images are found on <Link href="https://www.flaticon.com" underline="none">Flaticon. </Link>
                     The image found here, the login page, navbar, and the favicon belong to Hoyoverse, and edited by user ☆Souki☆ on the <Link href="https://www.hoyolab.com/article/7007341" underline="none">Hoyolab site. </Link>
                     The easter egg card image belongs to Hoyoverse, and screenshotted by user Felix_o0u on the <Link href="https://www.hoyolab.com/article/30095421" underline="none">Hoyolab site. </Link>
