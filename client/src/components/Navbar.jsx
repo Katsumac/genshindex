@@ -30,13 +30,12 @@ export default function Navbar() {
       <Container maxWidth="100%">
         <Toolbar disableGutters>
 
-          {/* For smaller screens */}
           {/* Logo */}
           <a href="/"><img src={"/paimonSmile.png"} id="paimonNavImg" /></a>
 
-          {/* Title */}
+          {/* Title, larger screen */}
           <Typography
-            variant="h6"
+            variant={"h6"}
             noWrap
             component="a"
             href="/"
@@ -112,9 +111,9 @@ export default function Navbar() {
           </Box>
 
 
-          {/* For larger screens */}
+          {/* Title, smaller screens */}
           <Typography
-            variant="h5"
+            variant="subtitle2"
             noWrap
             component="a"
             href="/"
@@ -189,7 +188,7 @@ export default function Navbar() {
               </Button>
             </a>
           </Box>
-          <a href="/login"><Button variant="contained">Log Out</Button></a>
+          <a href="/login"><Button variant="contained" maxWidth="20px"><Typography variant="caption">Log Out</Typography></Button></a>
         </Toolbar>
       </Container>
     </AppBar>
