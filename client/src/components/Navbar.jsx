@@ -113,7 +113,7 @@ export default function Navbar() {
 
           {/* Title, smaller screens */}
           <Typography
-            variant="subtitle2"
+            variant="subtitle1"
             noWrap
             component="a"
             href="/"
