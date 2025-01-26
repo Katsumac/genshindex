@@ -122,8 +122,8 @@ export default function Navbar() {
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
               fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
+              fontWeight: 500,
+              letterSpacing: '.2rem',
               color: 'inherit',
               textDecoration: 'none',
             }}
@@ -188,7 +188,7 @@ export default function Navbar() {
               </Button>
             </a>
           </Box>
-          <a href="/login"><Button variant="contained" maxWidth="20px"><Typography variant="caption">Log Out</Typography></Button></a>
+          <a href="/login"><Button variant="contained" maxWidth="15px"><Typography variant="caption" sx={{fontSize: {xs: 6, md: 15}}}>Log Out</Typography></Button></a>
         </Toolbar>
       </Container>
     </AppBar>
