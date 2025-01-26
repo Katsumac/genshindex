@@ -6,7 +6,7 @@ import SummaryTable from "./components/SummaryTable";
 import AbilityTable from "./components/AbilityTable";
 import RarityStars from "./components/RarityStars";
 import Typography from "@mui/material/Typography";
-import "./style/Info.css"
+import "./style/Info.css";
 
 export default function CharacterInfo() {
 
@@ -31,7 +31,7 @@ export default function CharacterInfo() {
             .then(blob => setCharacterIcon(URL.createObjectURL(blob)))
             .catch(e => `Error: ${e}`);
     }, []);
-    
+
     // Data to be passed to the summary table
     const summaryData = [
         { category: "Rarity", description: <RarityStars rarity={characterData.rarity} entityName={characterData.name} /> },

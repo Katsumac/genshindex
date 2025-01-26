@@ -1,10 +1,10 @@
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import RarityStars from './RarityStars';
-import "../style/Card.css"
-import "../style/StarButton.css"
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import RarityStars from "./RarityStars";
+import "../style/Card.css";
+import "../style/StarButton.css";
 
 export default function EasterEggCard() {
   return (
@@ -22,7 +22,7 @@ export default function EasterEggCard() {
           Paimon
         </Typography>
         <RarityStars rarity={6} />
-        <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
+        <Typography variant="body2" sx={{ color: "text.secondary", mt: 1 }}>
           Emergency Food
         </Typography>
       </CardContent>

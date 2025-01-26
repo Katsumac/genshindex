@@ -1,14 +1,14 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import FormButton from './FormButton';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
-import '../style/Form.css'
+import FormButton from "./FormButton";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
+import "../style/Form.css";
 
 export default function EditProfileForm() {
-    
+
     const [inputData, setInputData] = useState({
         editEmail: "",
         editUsername: ""
@@ -24,7 +24,7 @@ export default function EditProfileForm() {
 
     return (
         <div>
-            <Card sx={{ minWidth: 400, mx: 2 }} style={{ textAlign: "center"}}>
+            <Card sx={{ minWidth: 400, mx: 2 }} style={{ textAlign: "center" }}>
                 <CardContent>
                     <Typography variant="h5" gutterBottom>Edit Profile</Typography>
                     <div id="editEmailInput">

@@ -1,14 +1,10 @@
-import { useEffect } from "react";
-
 import EditProfileForm from "./components/EditProfileForm";
-import Typography from '@mui/material/Typography';
+import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 
 export default function EditProfile() {
-    
-    useEffect(() => {
-        document.title = "Edit Profile | GenshinDex";
-    }, []);
+
+    document.title = "Edit Profile | GenshinDex";
 
     return (
         <div>

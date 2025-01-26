@@ -1,17 +1,13 @@
-import { useEffect } from 'react';
-
-import Typography from '@mui/material/Typography';
-import "./style/EasterEggInfo.css"
+import Typography from "@mui/material/Typography";
+import "./style/EasterEggInfo.css";
 
 export default function EasterEggInfo() {
 
-    useEffect(() => {
-        document.title = "Paimon | GenshinDex"
-    }, [])
+    document.title = "Paimon | GenshinDex";
 
-    return(
+    return (
         <div>
-            <Typography variant="h3" component="h2" sx={{mb: 6}}>Paimon</Typography>
+            <Typography variant="h3" component="h2" sx={{ mb: 6 }}>Paimon</Typography>
             <img src="/angryPaimon.jpg" alt="Paimon is not Emergency Food!" id="angryPaimon" />
         </div>
     )

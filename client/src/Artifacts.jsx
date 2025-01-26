@@ -1,19 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import Grid from '@mui/material/Grid2'
-import Typography from '@mui/material/Typography';
-import Stack from '@mui/material/Stack';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import Button from '@mui/material/Button';
+import Grid from "@mui/material/Grid2";
+import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import Button from "@mui/material/Button";
 import ArtifactCard from "./components/ArtifactCard"
-import SearchBar from './components/SearchBar';
-import "./style/Paragraph.css"
+import SearchBar from "./components/SearchBar";
+import "./style/Paragraph.css";
 
 export default function Artifacts() {
-    
+
     const [artifactList, setArtifactList] = useState([]);
     const [filterChoices, setFilterChoices] = useState({
         max_rarity: ""
@@ -127,7 +127,7 @@ export default function Artifacts() {
                 sx={{ my: 6 }}>
                 {artifactList.length !== 0 ? artifactList.map((artifact, i) => {
                     // If there are artifacts in artifactList, display cards. If not, display a message.
-                    return <Grid key={i} size={{ xs: 1, sm: 2, md: 3 }} display="flex" justifyContent={'center'}>
+                    return <Grid key={i} size={{ xs: 1, sm: 2, md: 3 }} display="flex" justifyContent={"center"}>
                         <ArtifactCard artifactName={artifact} key={artifact + "Card"} />
                     </Grid>
                 }) : <Typography variant="body2" component="h2" sx={{ mt: 3, mb: 6, maxWidth: 900 }}> No artifacts found. </Typography>

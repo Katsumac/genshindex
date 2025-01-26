@@ -5,7 +5,7 @@ import StarButton from "./components/StarButton";
 import SummaryTable from "./components/SummaryTable";
 import RarityStars from "./components/RarityStars";
 import Typography from "@mui/material/Typography";
-import "./style/Info.css"
+import "./style/Info.css";
 
 export default function WeaponInfo() {
 

@@ -1,16 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import Stack from '@mui/material/Stack';
-import RarityStars from './RarityStars';
-import StarButton from './StarButton';
-import "../style/Card.css"
-import "../style/StarButton.css"
-
-import elementColourSelector from '../js/elementColourSelector';
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
+import RarityStars from "./RarityStars";
+import StarButton from "./StarButton";
+import "../style/Card.css";
+import "../style/StarButton.css";
+import elementColourSelector from "../js/elementColourSelector";
 
 export default function CharacterCard({ characterName }) {
 
@@ -54,7 +53,7 @@ export default function CharacterCard({ characterName }) {
         <Typography variant="body2" sx={{ color: elementColourSelector(characterData.vision), mt: 1 }}>
           {characterData.vision}
         </Typography>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+        <Typography variant="body2" sx={{ color: "text.secondary" }}>
           {characterData.weapon}
         </Typography>
       </CardContent>
