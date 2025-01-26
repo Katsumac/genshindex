@@ -31,8 +31,8 @@ export default function AbilityTable({ abilityData, secondColName }) {
   }));
 
   return (
-    <TableContainer component={Paper} sx={{ minWidth: 200, maxWidth: 1000, mb: 8 }} style={{ marginLeft: "auto", marginRight: "auto" }}>
-      <Table sx={{ minWidth: 200, maxWidth: 1000 }} aria-label="customized table">
+    <TableContainer component={Paper} sx={{ minWidth: 200, maxWidth: {xs: 350, md: 1000}, mb: 8 }} style={{ marginLeft: "auto", marginRight: "auto" }}>
+      <Table sx={{ minWidth: 200, maxWidth: {xs: 350, md: 1000}}} aria-label="customized table">
         <TableHead>
           <TableRow>
             <StyledTableCell>Name</StyledTableCell>

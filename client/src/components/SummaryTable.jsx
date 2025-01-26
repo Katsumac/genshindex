@@ -32,8 +32,8 @@ export default function SummaryTable({ summaryData }) {
   }));
 
   return (
-    <TableContainer component={Paper} sx={{ minWidth: 100, maxWidth: 500, mb: 8 }} style={{ marginLeft: "auto", marginRight: "auto" }}>
-      <Table sx={{ minWidth: 100, maxWidth: 500 }} aria-label="customized table">
+    <TableContainer component={Paper} sx={{ minWidth: 100, maxWidth: {xs: 350, md: 500}, mb: 8 }} style={{ marginLeft: "auto", marginRight: "auto" }}>
+      <Table sx={{ minWidth: 100, maxWidth: {xs: 350, md: 500}}} aria-label="customized table">
         <TableHead>
           <TableRow>
             <StyledTableCell style={{ width: "50%" }}>Category</StyledTableCell>
