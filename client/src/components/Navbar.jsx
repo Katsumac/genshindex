@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
 
     <AppBar position="static" sx={{ backgroundColor: "#224488", mb: 5 }}>
-      <Container maxWidth="100%">
+      <Container maxwidth="100%">
         <Toolbar disableGutters>
 
           {/* Logo */}
@@ -188,7 +188,7 @@ export default function Navbar() {
               </Button>
             </a>
           </Box>
-          <a href="/login"><Button variant="contained" maxWidth="15px"><Typography variant="caption" sx={{fontSize: {xs: 6, md: 15}}}>Log Out</Typography></Button></a>
+          <a href="/login"><Button variant="contained" maxwidth="15px"><Typography variant="button" sx={{fontSize: {xs: 7, md: 15}}}>Log Out</Typography></Button></a>
         </Toolbar>
       </Container>
     </AppBar>

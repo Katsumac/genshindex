@@ -11,13 +11,13 @@ export default function About() {
             <Typography variant="h3" component="h2" sx={{ mb: 6 }}>About GenshinDex</Typography>
             <img src={"/paimonSmile.png"} id="paimonImg" />
             <div className="paragraph">
-                <Typography variant="body1" sx={{ my: 6, maxWidth: 900 }} >
+                <Typography variant="body1" sx={{ my: 6, maxWidth: {xs: 330, md: 900} }} >
                     Hello, and welcome to GenshinDex! Browse the characters, weapons, artifacts, and foods of Hoyoverse's hit open-world, anime-style game Genshin Impact!
                     Feel free to select your favourites as well. If you have time, why not try to hunt down the Easter egg I've placed in one of the data pages?
                 </Typography>
             </div>
             <div className="paragraph">
-                <Typography variant="body1" sx={{ mb: 6, maxWidth: 900 }} >
+                <Typography variant="body1" sx={{ mb: 6, maxWidth: {xs: 330, md: 900} }} >
                     This is a personal project to practice using the basics of ReactJS and Node.js together. Currently working on the back-end. I would like to acknowledge that <Link href="https://genshin.hoyoverse.com/en/" underline="none">Genshin Impact </Link> is the intellectual property
                     of Hoyoverse, not mine.
                     The <Link href="https://www.flaticon.com/free-icon/email_3178158" underline="none">email, </Link>
@@ -34,7 +34,7 @@ export default function About() {
                 </Typography>
             </div>
             <div className="paragraph">
-                <Typography variant="body1" sx={{ mb: 6, maxWidth: 900 }} >
+                <Typography variant="body1" sx={{ mb: 6, maxWidth: {xs: 330, md: 900} }} >
                     Please feel free to contact me, whether it's with regards to the project, or if it's about Genshin. I hope you enjoy browsing GenshinDex!
                 </Typography>
             </div>

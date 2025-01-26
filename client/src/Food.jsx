@@ -117,7 +117,7 @@ export default function Food() {
                 <SearchBar runQuery={searchFood} />
             </div>
             <div className="paragraph">
-                <Typography variant="body2" component="h2" sx={{ mt: 3, mb: 6, maxWidth: 900 }}>
+                <Typography variant="body2" component="h2" sx={{ mt: 3, mb: 6, maxWidth: {xs: 330, md: 900} }}>
                     For "Pile 'Em Up", please search by "pile-em-up" &#40;without quotations&#41;.
                     If a food's name has two or more words, you may need use a dash in place of a space.
                     For example: "almond-tofu", or "egg-roll".
