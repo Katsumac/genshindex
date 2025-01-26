@@ -1,13 +1,9 @@
-import { useEffect } from "react";
-
 import RegistrationForm from "./components/RegistrationForm.jsx";
-import Typography from '@mui/material/Typography';
+import Typography from "@mui/material/Typography";
 
 export default function Registration() {
 
-    useEffect(() => {
-        document.title = "Registration | GenshinDex";
-    }, []);
+    document.title = "Registration | GenshinDex";
 
     return (
         <div>

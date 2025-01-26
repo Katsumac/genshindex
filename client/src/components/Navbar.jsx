@@ -1,16 +1,16 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
-import "../style/Navbar.css"
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import MenuItem from "@mui/material/MenuItem";
+import "../style/Navbar.css";
 
 export default function Navbar() {
 
@@ -25,18 +25,17 @@ export default function Navbar() {
   };
 
   return (
-    
-    <AppBar position="static" sx={{backgroundColor: "#224488", mb: 5}}>
-      <Container maxWidth="xl">
+
+    <AppBar position="static" sx={{ backgroundColor: "#224488", mb: 5 }}>
+      <Container maxWidth="100%">
         <Toolbar disableGutters>
 
-          {/* For smaller screens */}
           {/* Logo */}
           <a href="/"><img src={"/paimonSmile.png"} id="paimonNavImg" /></a>
 
-          {/* Title */}
+          {/* Title, larger screen */}
           <Typography
-            variant="h6"
+            variant={"h6"}
             noWrap
             component="a"
             href="/"
@@ -84,37 +83,37 @@ export default function Navbar() {
             >
 
               {/* Menu Items */}
-                <MenuItem key="Home" onClick={handleCloseNavMenu}>
-                  <a href="/" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Home</Typography></a>
-                </MenuItem>
+              <MenuItem key="Home" onClick={handleCloseNavMenu}>
+                <a href="/" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Home</Typography></a>
+              </MenuItem>
 
-                <MenuItem key="Characters" onClick={handleCloseNavMenu}>
-                  <a href="/characters" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Characters</Typography></a>
-                </MenuItem>
+              <MenuItem key="Characters" onClick={handleCloseNavMenu}>
+                <a href="/characters" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Characters</Typography></a>
+              </MenuItem>
 
-                <MenuItem key="Weapons" onClick={handleCloseNavMenu}>
-                  <a href="/weapons" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Weapons</Typography></a>
-                </MenuItem>
+              <MenuItem key="Weapons" onClick={handleCloseNavMenu}>
+                <a href="/weapons" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Weapons</Typography></a>
+              </MenuItem>
 
-                <MenuItem key="Artifacts" onClick={handleCloseNavMenu}>
-                  <a href="/artifacts" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Artifacts</Typography></a>
-                </MenuItem>
+              <MenuItem key="Artifacts" onClick={handleCloseNavMenu}>
+                <a href="/artifacts" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Artifacts</Typography></a>
+              </MenuItem>
 
-                <MenuItem key="Food" onClick={handleCloseNavMenu}>
-                  <a href="/food" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Food</Typography></a>
-                </MenuItem>
+              <MenuItem key="Food" onClick={handleCloseNavMenu}>
+                <a href="/food" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Food</Typography></a>
+              </MenuItem>
 
-                <MenuItem key="Profile" onClick={handleCloseNavMenu}>
-                  <a href="/profile" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Profile</Typography></a>
-                </MenuItem>
+              <MenuItem key="Profile" onClick={handleCloseNavMenu}>
+                <a href="/profile" className="menuItem"><Typography sx={{ textAlign: 'center' }}>Profile</Typography></a>
+              </MenuItem>
 
             </Menu>
           </Box>
 
 
-          {/* For larger screens */}
+          {/* Title, smaller screens */}
           <Typography
-            variant="h5"
+            variant="subtitle2"
             noWrap
             component="a"
             href="/"
@@ -134,62 +133,62 @@ export default function Navbar() {
 
           {/* Menu Items */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-              <a href="/" className="menuItem">
-                <Button
+            <a href="/" className="menuItem">
+              <Button
                 key="Home"
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
-                >
-                  Home
-                </Button>
-              </a>
-              <a href="/characters" className="menuItem">
-                <Button
+              >
+                Home
+              </Button>
+            </a>
+            <a href="/characters" className="menuItem">
+              <Button
                 key="Characters"
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
-                >
-                  Characters
-                </Button>
-              </a>
-              <a href="/weapons" className="menuItem">
-                <Button
+              >
+                Characters
+              </Button>
+            </a>
+            <a href="/weapons" className="menuItem">
+              <Button
                 key="Weapons"
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
-                >
-                  Weapons
-                </Button>
-              </a>
-              <a href="/artifacts" className="menuItem">
-                <Button
+              >
+                Weapons
+              </Button>
+            </a>
+            <a href="/artifacts" className="menuItem">
+              <Button
                 key="Artifacts"
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
-                >
-                  Artifacts
-                </Button>
-              </a>
-              <a href="/food" className="menuItem">
-                <Button
+              >
+                Artifacts
+              </Button>
+            </a>
+            <a href="/food" className="menuItem">
+              <Button
                 key="Food"
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
-                >
-                  Food
-                </Button>
-              </a>              
-              <a href="/profile" className="menuItem">
-                <Button
+              >
+                Food
+              </Button>
+            </a>
+            <a href="/profile" className="menuItem">
+              <Button
                 key="Profile"
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 Profile
               </Button>
-            </a>              
+            </a>
           </Box>
-          <a href="/login"><Button variant="contained">Log Out</Button></a>
+          <a href="/login"><Button variant="contained" maxWidth="20px"><Typography variant="caption">Log Out</Typography></Button></a>
         </Toolbar>
       </Container>
     </AppBar>

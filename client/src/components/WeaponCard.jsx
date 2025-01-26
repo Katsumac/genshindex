@@ -1,16 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import Stack from '@mui/material/Stack';
-import RarityStars from './RarityStars';
-import StarButton from './StarButton';
-import "../style/Card.css"
-import "../style/StarButton.css"
-
-import rarityColourSelector from '../js/rarityColourSelector';
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
+import RarityStars from "./RarityStars";
+import StarButton from "./StarButton";
+import "../style/Card.css";
+import "../style/StarButton.css";
+import rarityColourSelector from "../js/rarityColourSelector";
 
 export default function WeaponCard({ weaponName }) {
 
@@ -51,10 +50,10 @@ export default function WeaponCard({ weaponName }) {
           <StarButton />
         </Stack>
         <RarityStars rarity={weaponData.rarity} entityName={weaponData.name} />
-        <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
+        <Typography variant="body2" sx={{ color: "text.secondary", mt: 1 }}>
           {weaponData.type}
         </Typography>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+        <Typography variant="body2" sx={{ color: "text.secondary" }}>
           {weaponData.subStat}
         </Typography>
       </CardContent>

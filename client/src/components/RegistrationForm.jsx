@@ -1,12 +1,12 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import FormButton from './FormButton';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
-import '../style/Form.css'
+import FormButton from "./FormButton";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
+import Link from "@mui/material/Link";
+import "../style/Form.css";
 
 export default function RegistrationForm() {
 

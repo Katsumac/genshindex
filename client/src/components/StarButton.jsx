@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import StarIcon from '@mui/icons-material/Star';
-import StarOutlineIcon from '@mui/icons-material/StarOutline';
-import "../style/StarButton.css"
+import StarIcon from "@mui/icons-material/Star";
+import StarOutlineIcon from "@mui/icons-material/StarOutline";
+import "../style/StarButton.css";
 
 export default function StarButton() {
     const [isFilled, setIsFilled] = useState(false);
@@ -13,7 +13,7 @@ export default function StarButton() {
 
     return (
         <div>
-            {isFilled ? <StarIcon className="star" fontSize="large" onClick={handleClick} /> : <StarOutlineIcon className="star" fontSize="large" onClick={handleClick} sx={{mx: "auto"}} />}
+            {isFilled ? <StarIcon className="star" fontSize="large" onClick={handleClick} /> : <StarOutlineIcon className="star" fontSize="large" onClick={handleClick} sx={{ mx: "auto" }} />}
         </div>
     )
 }

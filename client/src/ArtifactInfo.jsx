@@ -6,7 +6,7 @@ import SummaryTable from "./components/SummaryTable";
 import RarityStars from "./components/RarityStars";
 import Typography from "@mui/material/Typography";
 import artifactPieceSelector from "./js/artifactPieceSelector";
-import "./style/Info.css"
+import "./style/Info.css";
 
 export default function ArtifactInfo() {
 

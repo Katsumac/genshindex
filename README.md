@@ -41,3 +41,10 @@ The surprised Paimon image (now where is it on the site? :)), found on the Gensh
   
 The data used is from the api established by [genshindev](https://github.com/genshindev/api). Please note that not all information may be up to date.
 
+## Links
+
+[Portfolio](https://justincng.netlify.app)
+
+<br />
+
+[LinkedIn](https://www.linkedin.com/in/justin-ng-79921b240)

@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import Stack from '@mui/material/Stack';
-import RarityStars from './RarityStars';
-import StarButton from './StarButton';
-import "../style/Card.css"
-import "../style/StarButton.css"
-import rarityColourSelector from '../js/rarityColourSelector';
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
+import RarityStars from "./RarityStars";
+import StarButton from "./StarButton";
+import "../style/Card.css";
+import "../style/StarButton.css";
+import rarityColourSelector from "../js/rarityColourSelector";
 
 export default function FoodCard({ foodName }) {
 
@@ -23,7 +23,7 @@ export default function FoodCard({ foodName }) {
       .then(data => setFoodData(data))
       .catch(e => `Error: ${e}`);
 
-      // Fetch the image of the food
+    // Fetch the image of the food
     fetch(`https://genshin.jmp.blue/consumables/food/${foodName}`)
       .then(response => response.blob())
       .then(blob => setFoodIcon(URL.createObjectURL(blob)))
@@ -51,7 +51,7 @@ export default function FoodCard({ foodName }) {
           <StarButton />
         </Stack>
         <RarityStars rarity={foodData && foodData[foodName].rarity} entityName={foodData && foodData[foodName].name} />
-        <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
+        <Typography variant="body2" sx={{ color: "text.secondary", mt: 1 }}>
           {foodData && foodData[foodName].type}
         </Typography>
       </CardContent>

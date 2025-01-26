@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -9,8 +9,8 @@ import RarityStars from "./RarityStars";
 import StarButton from "./StarButton";
 import artifactPieceSelector from "../js/artifactPieceSelector";
 import rarityColourSelector from "../js/rarityColourSelector";
-import "../style/Card.css"
-import "../style/StarButton.css"
+import "../style/Card.css";
+import "../style/StarButton.css";
 
 export default function ArtifactCard({ artifactName }) {
 
