@@ -117,7 +117,7 @@ export default function Weapons() {
                     Of course, you may search with part of their names instead.</Typography>
             </div>
             <div id="filter">
-                <Stack direction="row" justifyContent="center">
+                <Stack direction="row" justifyContent="center" sx={{mb: 2}}>
                     <FormControl sx={{ minWidth: 100, mx: 2, backgroundColor: "white" }}>
                         <InputLabel id="weaponRarityLabel">Rarity</InputLabel>
                         <Select
@@ -174,8 +174,10 @@ export default function Weapons() {
                             <MenuItem value="Physical DMG Bonus">Physical DMG Bonus</MenuItem>
                         </Select>
                     </FormControl>
+                </Stack>
+                <Stack direction="row" justifyContent="center">
                     <Button id="filterButton" variant="contained" sx={{ backgroundColor: "#ffc000", mr: 1 }} onClick={filterWeaponList} disabled={isDisabled}> Filter </Button>
-                    <Button id="resetButton" variant="contained" sx={{ backgroundColor: "#ffc000", mr: 2 }} onClick={resetFilter} disabled={!isDisabled}> Reset </Button>
+                    <Button id="resetButton" variant="contained" sx={{ backgroundColor: "#ffc000" }} onClick={resetFilter} disabled={!isDisabled}> Reset </Button>
                 </Stack>
             </div>
             <Grid

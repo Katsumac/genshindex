@@ -98,8 +98,8 @@ export default function Artifacts() {
                     For example: "archaic-petra", or "defender-s-will". Of course, you may search with part of their names instead.</Typography>
             </div>
             <div id="filter">
-                <Stack direction="row" justifyContent="center">
-                    <FormControl sx={{ minWidth: 150, mx: 2, backgroundColor: "white" }}>
+                <Stack direction="row" justifyContent="center" sx={{mb: 2}}>
+                    <FormControl sx={{ minWidth: 150, backgroundColor: "white" }}>
                         <InputLabel id="maxRarityLabel">Max Rarity</InputLabel>
                         <Select
                             labelId="maxRarity"
@@ -114,8 +114,10 @@ export default function Artifacts() {
                             <MenuItem value={5}>5</MenuItem>
                         </Select>
                     </FormControl>
+                </Stack>
+                <Stack direction="row" justifyContent="center">
                     <Button id="filterButton" variant="contained" sx={{ backgroundColor: "#ffc000", mr: 1 }} onClick={filterArtifactList} disabled={isDisabled}> Filter </Button>
-                    <Button id="resetButton" variant="contained" sx={{ backgroundColor: "#ffc000", mr: 2 }} onClick={resetFilter} disabled={!isDisabled}> Reset </Button>
+                    <Button id="resetButton" variant="contained" sx={{ backgroundColor: "#ffc000" }} onClick={resetFilter} disabled={!isDisabled}> Reset </Button>
                 </Stack>
             </div>
             <Grid
