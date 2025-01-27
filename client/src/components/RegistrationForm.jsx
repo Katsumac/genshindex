@@ -27,7 +27,7 @@ export default function RegistrationForm() {
 
     return (
         <div>
-            <Card sx={{ maxWidth: 350, p: 4, mt: 4, mb: 12 }} className="card">
+            <Card sx={{ width:{xs: 300, md: 400}, p:{xs: 1, md: 4}, mt: 4, mb: 12 }} className="card">
                 <CardContent>
                     <Typography variant="h5" gutterBottom>Registration</Typography>
                     <div id="emailInput">
@@ -37,7 +37,7 @@ export default function RegistrationForm() {
                             label="Email"
                             variant="standard"
                             value={inputData.registrationEmail}
-                            sx={{ minWidth: 300, pb: 2 }}
+                            sx={{ width:{xs: 250, md: 350}, pb: 2 }}
                             onChange={handleInputChange} />
                     </div>
                     <div id="passwordInput">
@@ -48,7 +48,7 @@ export default function RegistrationForm() {
                             type="password"
                             variant="standard"
                             value={inputData.registrationPassword}
-                            sx={{ minWidth: 300, pb: 2 }}
+                            sx={{ width:{xs: 250, md: 350}, pb: 2 }}
                             onChange={handleInputChange} />
                     </div>
                     <div id="confirmRegistrationPasswordInput">
@@ -59,7 +59,7 @@ export default function RegistrationForm() {
                             type="password"
                             variant="standard"
                             value={inputData.confirmRegistrationPassword}
-                            sx={{ minWidth: 300, pb: 2 }}
+                            sx={{ width:{xs: 250, md: 350}, pb: 2 }}
                             onChange={handleInputChange} />
                     </div>
                     <div id="registerUsernameInput">
@@ -69,7 +69,7 @@ export default function RegistrationForm() {
                             label="Username"
                             variant="standard"
                             value={inputData.registrationUsername}
-                            sx={{ minWidth: 300, pb: 5 }}
+                            sx={{ width:{xs: 250, md: 350}, pb: 5 }}
                             onChange={handleInputChange} />
                     </div>
                 </CardContent>

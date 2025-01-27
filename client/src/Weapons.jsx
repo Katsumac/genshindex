@@ -106,18 +106,18 @@ export default function Weapons() {
     return (
         <div>
             <Typography variant="h3" component="h2" sx={{ mb: 6 }}>Weapons</Typography>
-            <div className="searchBar">
+            <div className="searchBar" style={{width:"60%"}}>
                 <SearchBar runQuery={searchWeapons} />
             </div>
             <div className="paragraph">
-                <Typography variant="body2" component="h2" sx={{ mt: 3, mb: 6, maxWidth: 900 }}>
+                <Typography variant="body1" sx={{ mt: 3, mb: 6, width: {xs: 300, md: 900} }}>
                     For "Amos' Bow", please search by "amos-bow".
                     If a weapon's name has two or more words, or has an apostrophe, you may need use a dash in place of a space/apostrophe.
                     For example: "a-thousand-floating-dreams", or "beginner-s-protector".
                     Of course, you may search with part of their names instead.</Typography>
             </div>
             <div id="filter">
-                <Stack direction="row" justifyContent="center">
+                <Stack direction="row" justifyContent="center" sx={{mb: 2}}>
                     <FormControl sx={{ minWidth: 100, mx: 2, backgroundColor: "white" }}>
                         <InputLabel id="weaponRarityLabel">Rarity</InputLabel>
                         <Select
@@ -174,8 +174,10 @@ export default function Weapons() {
                             <MenuItem value="Physical DMG Bonus">Physical DMG Bonus</MenuItem>
                         </Select>
                     </FormControl>
+                </Stack>
+                <Stack direction="row" justifyContent="center">
                     <Button id="filterButton" variant="contained" sx={{ backgroundColor: "#ffc000", mr: 1 }} onClick={filterWeaponList} disabled={isDisabled}> Filter </Button>
-                    <Button id="resetButton" variant="contained" sx={{ backgroundColor: "#ffc000", mr: 2 }} onClick={resetFilter} disabled={!isDisabled}> Reset </Button>
+                    <Button id="resetButton" variant="contained" sx={{ backgroundColor: "#ffc000" }} onClick={resetFilter} disabled={!isDisabled}> Reset </Button>
                 </Stack>
             </div>
             <Grid

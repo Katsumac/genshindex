@@ -26,7 +26,7 @@ export default function LoginForm() {
 
     return (
         <div>
-            <Card sx={{ maxWidth: 350, p: 4, mt: 4, mb: 12 }} className="card">
+            <Card sx={{ width:{xs: 300, md: 400}, p:{xs: 1, md: 4}, mt: 4, mb: 12 }} className="card">
                 <CardContent>
                     <Typography variant="h5" gutterBottom>Log In</Typography>
                     <div id="loginEmailInput">
@@ -36,7 +36,7 @@ export default function LoginForm() {
                             label="Email"
                             variant="standard"
                             value={inputData.loginEmail}
-                            sx={{ minWidth: 300, pb: 2 }}
+                            sx={{ width:{xs: 250, md: 350}, pb: 2 }}
                             onChange={handleInputChange} />
                     </div>
                     <div id="loginPasswordInput">
@@ -47,7 +47,7 @@ export default function LoginForm() {
                             type="password"
                             variant="standard"
                             value={inputData.loginPassword}
-                            sx={{ minWidth: 300, pb: 5 }}
+                            sx={{ width:{xs: 250, md: 350}, pb: 5 }}
                             onChange={handleInputChange} />
                     </div>
                 </CardContent>

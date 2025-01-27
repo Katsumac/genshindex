@@ -24,7 +24,7 @@ export default function EditProfileForm() {
 
     return (
         <div>
-            <Card sx={{ minWidth: 400, mx: 2 }} style={{ textAlign: "center" }}>
+            <Card sx={{ width:{xs: 300, md: 400}, p:{xs: 1, md: 4}, mx: 2 }} style={{ textAlign: "center" }}>
                 <CardContent>
                     <Typography variant="h5" gutterBottom>Edit Profile</Typography>
                     <div id="editEmailInput">
@@ -34,7 +34,7 @@ export default function EditProfileForm() {
                             label="Email"
                             value={inputData.editEmail}
                             variant="standard"
-                            sx={{ minWidth: 300, maxWidth: 700, pb: 2 }}
+                            sx={{ width:{xs: 250, md: 350}, pb: 2 }}
                             onChange={handleInputChange} />
                     </div>
                     <div id="editUsernameInput">
@@ -44,7 +44,7 @@ export default function EditProfileForm() {
                             label="Username"
                             value={inputData.editUsername}
                             variant="standard"
-                            sx={{ minWidth: 300, maxWidth: 700, pb: 5 }}
+                            sx={{ width:{xs: 250, md: 350}, pb: 5 }}
                             onChange={handleInputChange} />
                     </div>
                     <div id="updateButton">

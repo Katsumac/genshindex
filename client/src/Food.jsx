@@ -113,18 +113,18 @@ export default function Food() {
     return (
         <div>
             <Typography variant="h3" component="h2" sx={{ mb: 6 }}>Food</Typography>
-            <div className="searchBar">
+            <div className="searchBar" style={{width:"60%"}}>
                 <SearchBar runQuery={searchFood} />
             </div>
             <div className="paragraph">
-                <Typography variant="body2" component="h2" sx={{ mt: 3, mb: 6, maxWidth: 900 }}>
+                <Typography variant="body1" sx={{ mt: 3, mb: 6, width: {xs: 300, md: 900} }}>
                     For "Pile 'Em Up", please search by "pile-em-up" &#40;without quotations&#41;.
                     If a food's name has two or more words, you may need use a dash in place of a space.
                     For example: "almond-tofu", or "egg-roll".
                     Of course, you may search with part of their names instead.</Typography>
             </div>
             <div id="filter">
-                <Stack direction="row" justifyContent="center">
+                <Stack direction="row" justifyContent="center" sx={{mb: 2}}>
                     <FormControl sx={{ minWidth: 100, mx: 2, backgroundColor: "white" }}>
                         <InputLabel id="foodRarityLabel">Rarity</InputLabel>
                         <Select
@@ -160,8 +160,10 @@ export default function Food() {
                             <MenuItem value="Emergency Food">Emergency Food</MenuItem>
                         </Select>
                     </FormControl>
+                </Stack>
+                <Stack direction="row" justifyContent="center">
                     <Button id="filterButton" variant="contained" sx={{ backgroundColor: "#ffc000", mr: 1 }} onClick={filterFoodList} disabled={isDisabled}> Filter </Button>
-                    <Button id="resetButton" variant="contained" sx={{ backgroundColor: "#ffc000", mr: 2 }} onClick={resetFilter} disabled={!isDisabled}> Reset </Button>
+                    <Button id="resetButton" variant="contained" sx={{ backgroundColor: "#ffc000" }} onClick={resetFilter} disabled={!isDisabled}> Reset </Button>
                 </Stack>
             </div>
             <Grid
