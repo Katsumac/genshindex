@@ -9,7 +9,7 @@ export default function Profile() {
     return (
         <div>
             <Typography variant="h3" component="h2" sx={{ mb: 6 }}>Your Profile</Typography>
-            <Stack direction="row" justifyContent="center" >
+            <Stack direction="row" justifyContent="center">
                 <ProfileDisplay />
             </Stack>
         </div>
