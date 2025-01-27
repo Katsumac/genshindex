@@ -108,7 +108,7 @@ export default function Characters() {
                 <SearchBar runQuery={searchCharacters} />
             </div>
             <div className="paragraph">
-                <Typography variant="body2" component="h2" sx={{ mt: 3, mb: 6, mx: 2, maxWidth: { xs: 330, md: 900 } }}>
+                <Typography variant="body1" sx={{ mt: 3, mb: 6, mx: 2, width: { xs: 300, md: 900 } }}>
                     For the Kamisato siblings, please search by their first name.
                     If a character's name has two or more words, you may need use a dash in place of a space.
                     For example: "traveler-anemo", or "arataki-itto".

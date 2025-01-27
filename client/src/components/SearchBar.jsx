@@ -21,7 +21,7 @@ export default function SearchBar({ runQuery }) {
 
     return (
         <Stack direction="row">
-            <TextField fullWidth id="searchField" name="search" value={searchQuery} label="Search" variant="outlined" size="medium" sx={{ backgroundColor: "white" }} onChange={handleSearchBarChange} onKeyDown={isEnterEvent} />
+            <TextField fullWidth id="searchField" name="search" value={searchQuery} label="Search" variant="outlined" size="medium" sx={{ backgroundColor: "white", mr: 1 }} onChange={handleSearchBarChange} onKeyDown={isEnterEvent} />
             <Button id="searchButton" variant="contained" sx={{ backgroundColor: "#ffc000" }} onClick={() => runQuery(searchQuery.toLowerCase())}> Search </Button>
         </Stack>
     )

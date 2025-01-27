@@ -110,7 +110,7 @@ export default function Weapons() {
                 <SearchBar runQuery={searchWeapons} />
             </div>
             <div className="paragraph">
-                <Typography variant="body2" component="h2" sx={{ mt: 3, mb: 6, maxWidth: {xs: 330, md: 900} }}>
+                <Typography variant="body1" sx={{ mt: 3, mb: 6, width: {xs: 300, md: 900} }}>
                     For "Amos' Bow", please search by "amos-bow".
                     If a weapon's name has two or more words, or has an apostrophe, you may need use a dash in place of a space/apostrophe.
                     For example: "a-thousand-floating-dreams", or "beginner-s-protector".
