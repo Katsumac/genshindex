@@ -9,3 +9,9 @@
     color: black;
     text-decoration: none;
 }
+
+@media screen and (max-width: 599px) {
+    #paimonNavImg {
+        width: 35px;
+    }
+}
