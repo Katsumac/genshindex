@@ -104,7 +104,7 @@ export default function Characters() {
     return (
         <div>
             <Typography variant="h3" component="h2" sx={{ mb: 6 }}>Characters</Typography>
-            <div className="searchBar">
+            <div className="searchBar" style={{width:"60%"}}>
                 <SearchBar runQuery={searchCharacters} />
             </div>
             <div className="paragraph">

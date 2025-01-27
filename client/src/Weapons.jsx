@@ -106,7 +106,7 @@ export default function Weapons() {
     return (
         <div>
             <Typography variant="h3" component="h2" sx={{ mb: 6 }}>Weapons</Typography>
-            <div className="searchBar">
+            <div className="searchBar" style={{width:"60%"}}>
                 <SearchBar runQuery={searchWeapons} />
             </div>
             <div className="paragraph">

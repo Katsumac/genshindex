@@ -89,12 +89,12 @@ export default function Artifacts() {
     return (
         <div>
             <Typography variant="h3" component="h2" sx={{ mb: 6 }}>Artifacts</Typography>
-            <div className="searchBar">
+            <div className="searchBar" style={{width:"60%"}}>
                 <SearchBar runQuery={searchArtifacts} />
             </div>
             <div className="paragraph">
                 <Typography variant="body1" sx={{ mt: 3, mb: 6, width: {xs: 300, md: 900} }}>
-                    If an artifact's name has two or more words, or has an apostrophe, you may need use a dash in place of a space/apostrophe.
+                    If an artifact's name has two or more words, or has an apostrophe, you may need use a dash in place of a space or apostrophe.
                     For example: "archaic-petra", or "defender-s-will". Of course, you may search with part of their names instead.</Typography>
             </div>
             <div id="filter">

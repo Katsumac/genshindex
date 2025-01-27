@@ -113,7 +113,7 @@ export default function Food() {
     return (
         <div>
             <Typography variant="h3" component="h2" sx={{ mb: 6 }}>Food</Typography>
-            <div className="searchBar">
+            <div className="searchBar" style={{width:"60%"}}>
                 <SearchBar runQuery={searchFood} />
             </div>
             <div className="paragraph">
