@@ -24,7 +24,7 @@ app.get("/users", (req, res) => {
     });
     
     db.connect();
-    db.query("SELECT * FROM test", (error, data) => {
+    db.query("SELECT * FROM users", (error, data) => {
         if (error) {
             console.log(error);
         }
